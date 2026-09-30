@@ -1,0 +1,6 @@
+# ZCode 会话工件（不属于项目内容）
+.zcodeignore
+
+# 编辑器与系统
+*.swp
+.DS_Store
