@@ -4,6 +4,14 @@
 
 四周试运行安排（2026-09-30 至 2026-10-27）见 `docs/superpowers/plans/2026-09-30-research-workbench-weekly-plan.md`。
 
+## 当前执行状态（2026-09-30 验收后）
+
+第 1 周经验整理已验收；三条经验仍为候选，个人掌握仍未检验。验收入口：[weeks/2026-09-30/REVIEW.md](weeks/2026-09-30/REVIEW.md)。
+
+第 2 周任务：[weeks/2026-10-07/PLAN.md](weeks/2026-10-07/PLAN.md)，CheckList 评分合同反例诊断，**可立即执行，实验尚未运行**。先检验关系测试是否会接收捷径策略；新增训练、GPU 与模型调用均为 0，CPU ≤2 core-hours。
+
+后续计划、回传与修正以本仓库为交互入口。下方第一周索引和原回传保留为历史；当前投入范围以新的周任务书为准。
+
 ## 阅读入口
 
 1. 最新周回传：[`weeks/2026-09-30/RETURN.md`](weeks/2026-09-30/RETURN.md)
@@ -47,3 +55,10 @@
 - 全局边界见 [`AGENTS.md`](AGENTS.md)：来源仓库只读、不访问锁定 test、不重开冻结阶段、按周预算执行。
 - 修正一律追加记录（案例与条目内的"修正历史"小节），不改写已交付内容。
 - 本仓库原创内容采用 MIT 许可（`LICENSE`，版权主体为暂定的仓库账号，发布前可调整）；上游材料保留其来源与许可，不整体复制后改署名。发布前置检查见 [`docs/PUBLISHING.md`](docs/PUBLISHING.md)。
+
+## 证据与许可补充（2026-09-30）
+
+已通过 GitHub 仓库元数据确认：本仓库公开，来源 zxqklein/p2 **为私有仓库**。案例中的路径与 SHA 是内部版本定位，外部读者目前不能直接获取这些原件；不将这些案例标为已公开独立复现。后续第二周生成器与有限域结果在本仓库交付时，可按其自身版本重放，但不能替代私有来源的真实任务证据。
+
+原设计已补齐：[docs/superpowers/specs/2026-09-30-research-workbench-design.md](docs/superpowers/specs/2026-09-30-research-workbench-design.md)。当前发布遗留项处置见 [docs/PUBLISHING.md](docs/PUBLISHING.md) 的收口记录；上游署名、来源与许可见 [docs/SOURCES_AND_LICENSES.md](docs/SOURCES_AND_LICENSES.md)。
+
