@@ -1,0 +1,145 @@
+{
+  "task_id": "RW-W3-REAL-CACHE-REUSE-v1",
+  "contract_version": "1.0.0",
+  "nature": "RETROSPECTIVE_REUSE",
+  "frozen_at": "2026-10-01T21:35:00+08:00",
+  "before_new_statistics": true,
+  "user_predictions": "NOT_PROVIDED",
+  "source_repo": {
+    "remote": "zxqklein/p2",
+    "branch": "feat/c1-directional-delta-v1",
+    "historical_data_commit": "9dcd77cc174117551f22b8b694feec00ac985292",
+    "current_interpretation_commit": "a0ddc50c2194bf74d60c9faf6d8a706d17b1440b",
+    "access": "read_only_via_git_show"
+  },
+  "inputs": {
+    "base_path_in_repo": "reports/rsicc_evidence_conflict_20260930",
+    "files": [
+      {
+        "path": "reports/rsicc_evidence_conflict_20260930/FROZEN_REPORT_A.json",
+        "sha256": "fdd51a370b6f2ff63058b0ab0884c9a881b24508f7b11f106db4f946e6d27c87",
+        "role": "63 parent components; units_snapshot 116 targets with rid/uid/ref_cA/ref_cB"
+      },
+      {
+        "path": "reports/rsicc_evidence_conflict_20260930/run/CACHE_SEAL_report_a_shard0.json",
+        "sha256": "fefbed247a1e4dda508513e014fde4579895ba19e1c86261a496021cd371c583",
+        "role": "components[cid].C_local[rid].A/B and C_local_cells[A/B] prompt/raw hashes"
+      },
+      {
+        "path": "reports/rsicc_evidence_conflict_20260930/run/CACHE_SEAL_report_a_shard1.json",
+        "sha256": "840f73fa355fe29ec7b41b97cca2fb93db59ad875730dc72d96a3857af383cf2",
+        "role": "same as shard0"
+      },
+      {
+        "path": "reports/rsicc_evidence_conflict_20260930/run/CACHE_SEAL_report_a_shard2.json",
+        "sha256": "2668084b2bba5a0791342a8d313a392729bc7fa52d5af0019fa61be2e0e0b2b8",
+        "role": "same as shard0"
+      },
+      {
+        "path": "reports/rsicc_evidence_conflict_20260930/run/report_a_shard0_LEDGER.jsonl",
+        "sha256": "8cf097a8bfca4dada816278f79d875bbf62ae2a16ed85ce7f4a14b6f6e2603ff",
+        "role": "original-run C_local raw outputs; only arm=C_local/kind=call records used"
+      },
+      {
+        "path": "reports/rsicc_evidence_conflict_20260930/run/report_a_shard1_LEDGER.jsonl",
+        "sha256": "c7b9f974d65b049438fac0769eaef53fcc99f3dbdd65b1aa52422d0ac39435e6",
+        "role": "same as shard0 ledger"
+      },
+      {
+        "path": "reports/rsicc_evidence_conflict_20260930/run/report_a_shard2_LEDGER.jsonl",
+        "sha256": "d36eed9a4009991304244f8bc0055d16e0a8773a4a2a72f8aea753963ca1dba1",
+        "role": "same as shard0 ledger"
+      },
+      {
+        "path": "reports/rsicc_evidence_conflict_20260930/RESULT_MANIFEST.json",
+        "sha256": "3814697ffee55839c0b25a944dd8aac878157233d30a579e025ba1254efd3740",
+        "role": "existing SHA-256 receipts for the files above (run/ entries)"
+      }
+    ]
+  },
+  "units": {
+    "n_parent_components": 63,
+    "n_targets": 116,
+    "rid_distribution": { "R1": 63, "R2": 53 },
+    "n_side_level_calls": 126,
+    "n_target_side_predictions": 232,
+    "n_derived_rows": 464,
+    "derived_rows_label": "DERIVED_FROM_SINGLE_SIDE_CACHE",
+    "all_refs_require_gA_ne_gB": true,
+    "r2_never_replaced_by_r1": true,
+    "uid_public_exposure": false
+  },
+  "classes": ["nvg_surface", "buildings", "tree", "low_vegetation", "water", "playgrounds"],
+  "derived_conditions": {
+    "AB": { "ref": ["gA", "gB"], "pred": ["pA", "pB"] },
+    "BA": { "ref": ["gB", "gA"], "pred": ["pB", "pA"] },
+    "AA": { "ref": ["gA", "gA"], "pred": ["pA", "pA"] },
+    "BB": { "ref": ["gB", "gB"], "pred": ["pB", "pB"] }
+  },
+  "parse_rule": {
+    "ledger_selection": "records with arm=='C_local' and kind=='call', cell==f'{cid}|C_local|{side}', exactly one per cell",
+    "line_format": "R<n>: <label>",
+    "normalization": "strip whitespace; strip one trailing ASCII '.' if present (observed original-run rule, 9/126 cells)",
+    "invalid_if": "label not in classes, or UNKNOWN, or expected rid line missing, or unexpected rid line present, or record count != 1",
+    "invalid_counts_zero_no_denominator_shrink": true,
+    "raw_sha_definition": "SHA256 of raw_output UTF-8 bytes",
+    "three_way_requirement": "raw_sha and prompt_sha match seal C_local_cells; re-parsed labels match seal C_local[rid][side]; unresolved cells go to unresolved list and trigger INPUT_UNRESOLVED/PARTIAL"
+  },
+  "readings": {
+    "weak_structural_relation": "valid AB/BA rows are mutual swaps; AA/BB rows same-class; construction check only, certifies composition implementation; invalid labels never pass",
+    "relation_change_pass": "both sides valid AND pA != pB AND weak structural relation holds; does NOT check prediction == reference",
+    "pair_correct": "both sides valid AND pA==gA AND pB==gB; AB and BA listed separately and must be identical; AA/BB equal respective single-side correctness",
+    "relation_pass_but_wrong": {
+      "definition": "relation_change_pass AND NOT pair_correct",
+      "report": ["K (target count)", "K/116", "parent_equal_weight_proportion"],
+      "status": "diagnostic frequency of this frozen cache; not a model-policy false-accept rate; no extrapolation"
+    }
+  },
+  "aggregation": {
+    "micro": "numerator/116 targets (single-side: /232)",
+    "parent_equal_weight": "mean over 63 components of per-component mean over that component's frozen targets",
+    "no_new_bootstrap": true,
+    "no_significance_screening": true,
+    "no_score_thresholds": true,
+    "derived_rows_never_add_independent_samples": true
+  },
+  "five_buckets": {
+    "order": ["INVALID_MISSING", "FULLY_CORRECT", "ACCURATELY_INVERTED", "WRONG_SAME_CLASS", "OTHER_LEGAL_WRONG_DIFF"],
+    "judge_in_order": true,
+    "definitions": {
+      "INVALID_MISSING": "either side invalid/missing/unknown/illegal",
+      "FULLY_CORRECT": "valid AND pA==gA AND pB==gB",
+      "ACCURATELY_INVERTED": "valid AND (pA,pB)==(gB,gA)",
+      "WRONG_SAME_CLASS": "valid AND pA==pB",
+      "OTHER_LEGAL_WRONG_DIFF": "valid AND pA!=pB AND (pA,pB)!=(gB,gA) AND not fully correct"
+    },
+    "sum_must_equal": 116
+  },
+  "known_information": {
+    "disclosed_before_freeze": true,
+    "pre_taskbook": ["C_local single-side micro 110/232 = 47.41%", "category-pair parent equal-weight 0.1746031746031746", "cache examples contain wrong predictions"],
+    "mapping_check_2026_10_01": ["110/232 reproduced exactly", "0.1746031746031746 reproduced exactly", "category-pair micro 20/116", "232/232 side labels are legal class values", "18 distinct reference class pairs", "9/126 cells with trailing periods", "126/126 cells raw_sha/prompt_sha/labels three-way match", "R1x63 + R2x53", "shards 21/21/21"],
+    "usage_limit": "mapping cross-check only; never subtracted, squared, or substituted for K"
+  },
+  "result_rules": {
+    "REUSE_OBSERVED_IN_SCOPE": "inputs and mapping reliable AND K>=1 AND pointer to original outputs exists",
+    "NO_COUNTEREXAMPLE_IN_THIS_CACHE": "inputs reliable AND K==0",
+    "INPUT_UNRESOLVED": "version/mapping/parse not reliably verifiable; stop dependent statistics"
+  },
+  "claims_boundary": "none of the three statuses certifies real direction mechanism, object binding, event gold, geographic generalization, or new-method performance; retrospective reuse is never an independent confirmation",
+  "week2_r1_not_transplanted": "week-2 R1 '100% correct under full ground truth' is not a real-model reception condition",
+  "cost_caps": {
+    "cpu_core_hours_max": 4,
+    "gpu_hours": 0,
+    "new_training_runs": 0,
+    "experimental_model_or_judge_calls": 0,
+    "paid_api": 0,
+    "annotation_or_procurement": 0,
+    "research_data_sampling_or_download": 0
+  },
+  "execution_window": {
+    "start_first_record": "2026-10-01T21:23:00+08:00",
+    "max_hours": 48,
+    "hard_deadline": "2026-10-20T23:59:00+08:00"
+  }
+}
