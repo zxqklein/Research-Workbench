@@ -14,7 +14,7 @@
 
 ## 阅读入口
 
-1. 最新周回传：[`weeks/2026-09-30/RETURN.md`](weeks/2026-09-30/RETURN.md)
+1. 最新周回传：[`weeks/2026-10-07/RETURN.md`](weeks/2026-10-07/RETURN.md)
 2. 案例目录：`cases/00*/README.md`（原件定位、核对的主张、缺口）
 3. 经验条目：`playbook/*.md`（每条标注 候选／已支持／被修正）
 4. 外部方法迁移：`external_methods/*.md`
