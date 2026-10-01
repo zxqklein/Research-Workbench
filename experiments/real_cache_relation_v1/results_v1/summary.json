@@ -1,0 +1,92 @@
+{
+ "task_id": "RW-W3-REAL-CACHE-REUSE-v1",
+ "contract_version": "1.0.0",
+ "contract_freeze_commit": "688d2f6d456ae83f9435effa46a8bb474ae9078f",
+ "nature": "RETROSPECTIVE_REUSE",
+ "derived_rows_label": "DERIVED_FROM_SINGLE_SIDE_CACHE",
+ "source": {
+  "repo": "zxqklein/p2",
+  "branch": "feat/c1-directional-delta-v1",
+  "historical_data_commit": "9dcd77cc174117551f22b8b694feec00ac985292",
+  "input_sha256": {
+   "reports/rsicc_evidence_conflict_20260930/FROZEN_REPORT_A.json": "fdd51a370b6f2ff63058b0ab0884c9a881b24508f7b11f106db4f946e6d27c87",
+   "reports/rsicc_evidence_conflict_20260930/run/CACHE_SEAL_report_a_shard0.json": "fefbed247a1e4dda508513e014fde4579895ba19e1c86261a496021cd371c583",
+   "reports/rsicc_evidence_conflict_20260930/run/CACHE_SEAL_report_a_shard1.json": "840f73fa355fe29ec7b41b97cca2fb93db59ad875730dc72d96a3857af383cf2",
+   "reports/rsicc_evidence_conflict_20260930/run/CACHE_SEAL_report_a_shard2.json": "2668084b2bba5a0791342a8d313a392729bc7fa52d5af0019fa61be2e0e0b2b8",
+   "reports/rsicc_evidence_conflict_20260930/run/report_a_shard0_LEDGER.jsonl": "8cf097a8bfca4dada816278f79d875bbf62ae2a16ed85ce7f4a14b6f6e2603ff",
+   "reports/rsicc_evidence_conflict_20260930/run/report_a_shard1_LEDGER.jsonl": "c7b9f974d65b049438fac0769eaef53fcc99f3dbdd65b1aa52422d0ac39435e6",
+   "reports/rsicc_evidence_conflict_20260930/run/report_a_shard2_LEDGER.jsonl": "d36eed9a4009991304244f8bc0055d16e0a8773a4a2a72f8aea753963ca1dba1",
+   "reports/rsicc_evidence_conflict_20260930/RESULT_MANIFEST.json": "3814697ffee55839c0b25a944dd8aac878157233d30a579e025ba1254efd3740"
+  }
+ },
+ "units": {
+  "n_parent_components": 63,
+  "n_targets": 116,
+  "n_side_level_calls": 126,
+  "n_target_side_predictions": 232,
+  "n_derived_rows": 464,
+  "all_refs_gA_ne_gB": true,
+  "r2_never_replaced_by_r1": true
+ },
+ "verification": {
+  "input_sha256_matches_contract_and_manifest": true,
+  "three_way_raw_seal_reference_match": true,
+  "unresolved_cells": 0,
+  "weak_structural_relation_rows_ok": 464,
+  "weak_structural_relation_rows_total": 464,
+  "ab_ba_pair_correct_consistent_targets": 116,
+  "mapping_crosscheck_single_side_micro": "110/232",
+  "mapping_crosscheck_pair_parent_equal_weight": 0.1746031746031746
+ },
+ "readings": {
+  "relation_change_pass": {
+   "count": 56,
+   "micro": 0.4827586206896552,
+   "parent_equal_weight": 0.47619047619047616
+  },
+  "pair_correct": {
+   "count": 20,
+   "micro": 0.1724137931034483,
+   "parent_equal_weight": 0.1746031746031746
+  },
+  "pair_correct_note": "AB and BA identical by construction and verified; AA/BB equal respective single-side correctness",
+  "relation_pass_but_wrong": {
+   "count": 36,
+   "micro": 0.3103448275862069,
+   "parent_equal_weight": 0.30158730158730157
+  }
+ },
+ "five_buckets": {
+  "INVALID_MISSING": {
+   "count": 0,
+   "proportion": 0.0
+  },
+  "FULLY_CORRECT": {
+   "count": 20,
+   "proportion": 0.1724137931034483
+  },
+  "ACCURATELY_INVERTED": {
+   "count": 2,
+   "proportion": 0.017241379310344827
+  },
+  "WRONG_SAME_CLASS": {
+   "count": 60,
+   "proportion": 0.5172413793103449
+  },
+  "OTHER_LEGAL_WRONG_DIFF": {
+   "count": 34,
+   "proportion": 0.29310344827586204
+  }
+ },
+ "bucket_sum": 116,
+ "status": "REUSE_OBSERVED_IN_SCOPE",
+ "claims_boundary": "diagnostic frequency of this frozen cache; not a model-policy false-accept rate; no extrapolation; not an independent confirmation; certifies nothing about direction mechanism, object binding, event gold, geographic generalization, or new-method performance",
+ "counterexample_selection": "first by UID lexicographic order per type, max 2, see counterexamples.md",
+ "user_predictions": "NOT_PROVIDED",
+ "cost": {
+  "gpu_hours": 0,
+  "new_training_runs": 0,
+  "model_or_judge_calls": 0,
+  "paid_api": 0
+ }
+}

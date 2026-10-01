@@ -7,3 +7,6 @@
 
 # Python bytecode cache (created when verify_static imports run.py)
 __pycache__/
+
+# RW-W3: full per-target derived tables and machine paths stay local (task book T2)
+experiments/real_cache_relation_v1/local_only/
