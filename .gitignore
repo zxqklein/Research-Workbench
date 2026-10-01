@@ -4,3 +4,6 @@
 # 编辑器与系统
 *.swp
 .DS_Store
+
+# Python bytecode cache (created when verify_static imports run.py)
+__pycache__/
