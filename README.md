@@ -8,7 +8,7 @@
 
 第 1 周经验整理已验收；三条经验仍为候选，个人掌握仍未检验。验收入口：[weeks/2026-09-30/REVIEW.md](weeks/2026-09-30/REVIEW.md)。
 
-第 2 周任务：[weeks/2026-10-07/PLAN.md](weeks/2026-10-07/PLAN.md)，CheckList 评分合同反例诊断，**可立即执行，实验尚未运行**。先检验关系测试是否会接收捷径策略；新增训练、GPU 与模型调用均为 0，CPU ≤2 core-hours。
+第 2 周任务：[weeks/2026-10-07/PLAN.md](weeks/2026-10-07/PLAN.md)，CheckList 评分合同反例诊断，**已于 2026-10-01 执行完毕**（PREREG/合同冻结于运行前，结果见 `experiments/checklist_measurement_v1/`，回传见第 2 周 RETURN）。主读数：5 个非 ORACLE 策略中 2 个通过关系门槛 R0 却未通过完整合同 R1（SLOT_ID、INVERT_TARGET）；新增训练、GPU 与模型调用均为 0，CPU ≤2 core-hours。
 
 后续计划、回传与修正以本仓库为交互入口。下方第一周索引和原回传保留为历史；当前投入范围以新的周任务书为准。
 
@@ -20,19 +20,21 @@
 4. 外部方法迁移：`external_methods/*.md`
 5. 个人练习：`practice/<日期>/{questions,feedback}.md`
 
-## 当前索引（2026-09-30，第 1 周）
+## 当前索引（2026-10-01，第 2 周后更新；第 1 周行保留为历史）
 
 | 类型 | 条目 | 状态 |
 |---|---|---|
 | 案例 | [001 阈值与比较](cases/001-threshold-and-comparison/README.md) | 已核对（原件已读，缺口已标注） |
 | 案例 | [002 指标与事实](cases/002-metrics-and-visual-facts/README.md) | 已核对（原件已读，缺口已标注） |
 | 案例 | [003 干预与答案](cases/003-intervention-and-answer/README.md) | 已核对（原件已读，缺口已标注） |
+| 案例 | [004 CheckList 评分合同反例诊断](cases/004-checklist-measurement/README.md) | 本周原创实验（冻结合同＋结果＋程序验证，逻辑反例非真实任务证据） |
 | 经验 | [阈值与公平比较](playbook/threshold-and-fair-comparison.md) | **候选**（单案例支持） |
 | 经验 | [指标与任务证据](playbook/metrics-and-task-evidence.md) | **候选**（单案例支持） |
-| 经验 | [控制的语义效度](playbook/semantic-validity-of-controls.md) | **候选**（单案例支持） |
+| 经验 | [控制的语义效度](playbook/semantic-validity-of-controls.md) | **候选**（2026-10-01 增加合成域使用记录） |
 | 外部方法 | [Deep Learning Tuning Playbook](external_methods/2026-09-30_tuning_playbook.md) | 已读，迁移前提成文 |
-| 外部方法 | [CheckList](external_methods/2026-09-30_checklist.md) | 已读，迁移前提成文 |
+| 外部方法 | [CheckList](external_methods/2026-09-30_checklist.md) | 已读，迁移前提成文；第 2 周已做有限域实例化 |
 | 练习 | [2026-09-30](practice/2026-09-30/questions.md) | 题目已出，**未作答／未检验** |
+| 练习 | [判例题 004](cases/004-checklist-measurement/quiz.md) | 题目已出（附分开存放的答案卷），**未作答／未检验** |
 
 **已支持经验索引：目前为空。** 三条经验条目各自只来自一个历史案例，属于候选，须在第 3 周独立确认或复用后才可升格。
 
