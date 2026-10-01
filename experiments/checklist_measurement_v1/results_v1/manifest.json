@@ -1,0 +1,81 @@
+{
+  "command": [
+    "experiments/checklist_measurement_v1/run.py",
+    "--contract",
+    "experiments/checklist_measurement_v1/contract.json",
+    "--prereg-commit",
+    "56bed4ba9a7186fc3392a695358a5d41f806902c",
+    "--out",
+    "experiments/checklist_measurement_v1/results_v1"
+  ],
+  "contract_version": "1.0.0",
+  "counts": {
+    "counterexample_files": [
+      "experiments/checklist_measurement_v1/results_v1/counterexamples/SLOT_ID.json",
+      "experiments/checklist_measurement_v1/results_v1/counterexamples/INVERT_TARGET.json"
+    ],
+    "groups": 16,
+    "rows": 128,
+    "strategies": 6
+  },
+  "environment": {
+    "cpu_count": 128,
+    "gpu": "none used; pure stdlib CPU run",
+    "machine": "x86_64",
+    "platform": "Linux-6.8.0-40-generic-x86_64-with-glibc2.35",
+    "python": "3.13.5 | packaged by Anaconda, Inc. | (main, Jun 12 2025, 16:09:02) [GCC 11.2.0]"
+  },
+  "generated_at_utc": "2026-10-01T05:50:26.183788+00:00",
+  "inputs": {
+    "contract": {
+      "path": "experiments/checklist_measurement_v1/contract.json",
+      "sha256": "b5d25a950eeb2a9cedcf920cad8757f0266fdc9f9a821a02266413f17479cbcf"
+    },
+    "run_py": {
+      "path": "/data/home/ma/zxq/research-workbench/experiments/checklist_measurement_v1/run.py",
+      "sha256": "03fa623d494d7bbd29426e8b76e9a533b04a206b0cf2fa8c955d575815aba6aa"
+    },
+    "verify_static_py": {
+      "path": "/data/home/ma/zxq/research-workbench/experiments/checklist_measurement_v1/verify_static.py",
+      "sha256": "b5d9345a7321c358c37404f129bbf5add5034c32651fc57c9b0c713e8bf69501"
+    }
+  },
+  "main_reading": {
+    "count": 2,
+    "counterexample_files": [
+      "counterexamples/SLOT_ID.json",
+      "counterexamples/INVERT_TARGET.json"
+    ],
+    "definition": "number of the 5 non-ORACLE strategies that pass R0 while failing R1",
+    "non_oracle_strategies": 5,
+    "pass_r0_fail_r1": [
+      "SLOT_ID",
+      "INVERT_TARGET"
+    ]
+  },
+  "outputs": {
+    "rows_jsonl_sha256": "620028ecb93e6e6ff366834cb2d037dd6073ccccbf86e7b15b3191de6a1660d5",
+    "summary_json_sha256": "b0296ad1866ff840e6b4b4c2f26b66dd5ea18a3123dad1e5b0f67a834927b9e1"
+  },
+  "prereg_commit": "56bed4ba9a7186fc3392a695358a5d41f806902c",
+  "resources": {
+    "assistant_token_cost": "UNKNOWN (not observable to the run)",
+    "cpu_core_hours": 3.413e-06,
+    "cpu_process_seconds": 0.012288,
+    "downloads": 0,
+    "gpu_hours": 0,
+    "measurement_source": "time.perf_counter / time.process_time inside run.py",
+    "model_vlm_judge_api_calls": 0,
+    "new_training": 0,
+    "paid_services": 0,
+    "wall_seconds": 0.012294
+  },
+  "task_id": "RW-W2-CHECKLIST-MEASUREMENT-v1",
+  "validation": {
+    "contract_row_count_match": true,
+    "keys_unique": true,
+    "oracle_r0_pass": true,
+    "oracle_r1_pass": true,
+    "overwrite_refusal_active": true
+  }
+}

@@ -1,0 +1,308 @@
+{
+  "evidence_group": 4,
+  "r0_verdict": "PASS",
+  "r1_failed_components": [
+    "mft_all_correct",
+    "joint_all_correct",
+    "dir_change_rows_all_correct",
+    "inv_all_pairs"
+  ],
+  "reads": [
+    "frame_id_first",
+    "frame_id_second",
+    "order_mark"
+  ],
+  "rows": [
+    {
+      "condition": "AB",
+      "frames": [
+        {
+          "background_id": "bgA",
+          "distractor_exists": 0,
+          "frame_id": "A",
+          "target_exists": 0
+        },
+        {
+          "background_id": "bgB",
+          "distractor_exists": 0,
+          "frame_id": "B",
+          "target_exists": 1
+        }
+      ],
+      "group_id": 4,
+      "key": "g04|AB|v0",
+      "order_mark": "ORIGINAL",
+      "outputs": {
+        "CONST_APPEAR": "APPEAR",
+        "CONST_NULL": "NO_EXISTENCE_CHANGE",
+        "DISTRACTOR": "NO_EXISTENCE_CHANGE",
+        "INVERT_TARGET": "DISAPPEAR",
+        "ORACLE": "APPEAR",
+        "SLOT_ID": "APPEAR"
+      },
+      "states": {
+        "d_A": 0,
+        "d_B": 0,
+        "t_A": 0,
+        "t_B": 1
+      },
+      "truth": "APPEAR",
+      "version": 0
+    },
+    {
+      "condition": "AB",
+      "frames": [
+        {
+          "background_id": "bgA",
+          "distractor_exists": 0,
+          "frame_id": "A",
+          "target_exists": 0
+        },
+        {
+          "background_id": "bgB",
+          "distractor_exists": 0,
+          "frame_id": "B",
+          "target_exists": 1
+        }
+      ],
+      "group_id": 4,
+      "key": "g04|AB|v1",
+      "order_mark": "REVERSED",
+      "outputs": {
+        "CONST_APPEAR": "APPEAR",
+        "CONST_NULL": "NO_EXISTENCE_CHANGE",
+        "DISTRACTOR": "NO_EXISTENCE_CHANGE",
+        "INVERT_TARGET": "DISAPPEAR",
+        "ORACLE": "APPEAR",
+        "SLOT_ID": "DISAPPEAR"
+      },
+      "states": {
+        "d_A": 0,
+        "d_B": 0,
+        "t_A": 0,
+        "t_B": 1
+      },
+      "truth": "APPEAR",
+      "version": 1
+    },
+    {
+      "condition": "BA",
+      "frames": [
+        {
+          "background_id": "bgB",
+          "distractor_exists": 0,
+          "frame_id": "B",
+          "target_exists": 1
+        },
+        {
+          "background_id": "bgA",
+          "distractor_exists": 0,
+          "frame_id": "A",
+          "target_exists": 0
+        }
+      ],
+      "group_id": 4,
+      "key": "g04|BA|v0",
+      "order_mark": "REVERSED",
+      "outputs": {
+        "CONST_APPEAR": "APPEAR",
+        "CONST_NULL": "NO_EXISTENCE_CHANGE",
+        "DISTRACTOR": "NO_EXISTENCE_CHANGE",
+        "INVERT_TARGET": "APPEAR",
+        "ORACLE": "DISAPPEAR",
+        "SLOT_ID": "DISAPPEAR"
+      },
+      "states": {
+        "d_A": 0,
+        "d_B": 0,
+        "t_A": 0,
+        "t_B": 1
+      },
+      "truth": "DISAPPEAR",
+      "version": 0
+    },
+    {
+      "condition": "BA",
+      "frames": [
+        {
+          "background_id": "bgB",
+          "distractor_exists": 0,
+          "frame_id": "B",
+          "target_exists": 1
+        },
+        {
+          "background_id": "bgA",
+          "distractor_exists": 0,
+          "frame_id": "A",
+          "target_exists": 0
+        }
+      ],
+      "group_id": 4,
+      "key": "g04|BA|v1",
+      "order_mark": "ORIGINAL",
+      "outputs": {
+        "CONST_APPEAR": "APPEAR",
+        "CONST_NULL": "NO_EXISTENCE_CHANGE",
+        "DISTRACTOR": "NO_EXISTENCE_CHANGE",
+        "INVERT_TARGET": "APPEAR",
+        "ORACLE": "DISAPPEAR",
+        "SLOT_ID": "APPEAR"
+      },
+      "states": {
+        "d_A": 0,
+        "d_B": 0,
+        "t_A": 0,
+        "t_B": 1
+      },
+      "truth": "DISAPPEAR",
+      "version": 1
+    },
+    {
+      "condition": "AA",
+      "frames": [
+        {
+          "background_id": "bgA",
+          "distractor_exists": 0,
+          "frame_id": "A",
+          "target_exists": 0
+        },
+        {
+          "background_id": "bgA",
+          "distractor_exists": 0,
+          "frame_id": "A",
+          "target_exists": 0
+        }
+      ],
+      "group_id": 4,
+      "key": "g04|AA|v0",
+      "order_mark": "ORIGINAL",
+      "outputs": {
+        "CONST_APPEAR": "APPEAR",
+        "CONST_NULL": "NO_EXISTENCE_CHANGE",
+        "DISTRACTOR": "NO_EXISTENCE_CHANGE",
+        "INVERT_TARGET": "NO_EXISTENCE_CHANGE",
+        "ORACLE": "NO_EXISTENCE_CHANGE",
+        "SLOT_ID": "NO_EXISTENCE_CHANGE"
+      },
+      "states": {
+        "d_A": 0,
+        "d_B": 0,
+        "t_A": 0,
+        "t_B": 1
+      },
+      "truth": "NO_EXISTENCE_CHANGE",
+      "version": 0
+    },
+    {
+      "condition": "AA",
+      "frames": [
+        {
+          "background_id": "bgA",
+          "distractor_exists": 0,
+          "frame_id": "A",
+          "target_exists": 0
+        },
+        {
+          "background_id": "bgA",
+          "distractor_exists": 0,
+          "frame_id": "A",
+          "target_exists": 0
+        }
+      ],
+      "group_id": 4,
+      "key": "g04|AA|v1",
+      "order_mark": "REVERSED",
+      "outputs": {
+        "CONST_APPEAR": "APPEAR",
+        "CONST_NULL": "NO_EXISTENCE_CHANGE",
+        "DISTRACTOR": "NO_EXISTENCE_CHANGE",
+        "INVERT_TARGET": "NO_EXISTENCE_CHANGE",
+        "ORACLE": "NO_EXISTENCE_CHANGE",
+        "SLOT_ID": "NO_EXISTENCE_CHANGE"
+      },
+      "states": {
+        "d_A": 0,
+        "d_B": 0,
+        "t_A": 0,
+        "t_B": 1
+      },
+      "truth": "NO_EXISTENCE_CHANGE",
+      "version": 1
+    },
+    {
+      "condition": "BB",
+      "frames": [
+        {
+          "background_id": "bgB",
+          "distractor_exists": 0,
+          "frame_id": "B",
+          "target_exists": 1
+        },
+        {
+          "background_id": "bgB",
+          "distractor_exists": 0,
+          "frame_id": "B",
+          "target_exists": 1
+        }
+      ],
+      "group_id": 4,
+      "key": "g04|BB|v0",
+      "order_mark": "ORIGINAL",
+      "outputs": {
+        "CONST_APPEAR": "APPEAR",
+        "CONST_NULL": "NO_EXISTENCE_CHANGE",
+        "DISTRACTOR": "NO_EXISTENCE_CHANGE",
+        "INVERT_TARGET": "NO_EXISTENCE_CHANGE",
+        "ORACLE": "NO_EXISTENCE_CHANGE",
+        "SLOT_ID": "NO_EXISTENCE_CHANGE"
+      },
+      "states": {
+        "d_A": 0,
+        "d_B": 0,
+        "t_A": 0,
+        "t_B": 1
+      },
+      "truth": "NO_EXISTENCE_CHANGE",
+      "version": 0
+    },
+    {
+      "condition": "BB",
+      "frames": [
+        {
+          "background_id": "bgB",
+          "distractor_exists": 0,
+          "frame_id": "B",
+          "target_exists": 1
+        },
+        {
+          "background_id": "bgB",
+          "distractor_exists": 0,
+          "frame_id": "B",
+          "target_exists": 1
+        }
+      ],
+      "group_id": 4,
+      "key": "g04|BB|v1",
+      "order_mark": "REVERSED",
+      "outputs": {
+        "CONST_APPEAR": "APPEAR",
+        "CONST_NULL": "NO_EXISTENCE_CHANGE",
+        "DISTRACTOR": "NO_EXISTENCE_CHANGE",
+        "INVERT_TARGET": "NO_EXISTENCE_CHANGE",
+        "ORACLE": "NO_EXISTENCE_CHANGE",
+        "SLOT_ID": "NO_EXISTENCE_CHANGE"
+      },
+      "states": {
+        "d_A": 0,
+        "d_B": 0,
+        "t_A": 0,
+        "t_B": 1
+      },
+      "truth": "NO_EXISTENCE_CHANGE",
+      "version": 1
+    }
+  ],
+  "rule": "same frame_id -> NO_EXISTENCE_CHANGE; else ORIGINAL -> APPEAR, REVERSED -> DISAPPEAR",
+  "scope_note": "one full group; the same behavior holds on every change group (see rows.jsonl); R0 passes here while R1 fails here",
+  "strategy": "SLOT_ID"
+}

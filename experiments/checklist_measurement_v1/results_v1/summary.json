@@ -1,0 +1,2329 @@
+{
+  "auxiliary": {
+    "r0_pass": [
+      "ORACLE",
+      "SLOT_ID",
+      "INVERT_TARGET"
+    ],
+    "r1_misses": [
+      {
+        "failed_components": [
+          "mft_all_correct",
+          "joint_all_correct",
+          "dir_relation_all",
+          "dir_change_rows_all_correct"
+        ],
+        "strategy": "CONST_NULL"
+      },
+      {
+        "failed_components": [
+          "mft_all_correct",
+          "joint_all_correct",
+          "dir_relation_all",
+          "dir_change_rows_all_correct",
+          "aa_bb_all"
+        ],
+        "strategy": "CONST_APPEAR"
+      },
+      {
+        "failed_components": [
+          "mft_all_correct",
+          "joint_all_correct",
+          "dir_change_rows_all_correct",
+          "inv_all_pairs"
+        ],
+        "strategy": "SLOT_ID"
+      },
+      {
+        "failed_components": [
+          "mft_all_correct",
+          "joint_all_correct",
+          "dir_change_rows_all_correct"
+        ],
+        "strategy": "INVERT_TARGET"
+      },
+      {
+        "failed_components": [
+          "mft_all_correct",
+          "joint_all_correct",
+          "dir_relation_all",
+          "dir_change_rows_all_correct"
+        ],
+        "strategy": "DISTRACTOR"
+      }
+    ],
+    "r1_pass": [
+      "ORACLE"
+    ]
+  },
+  "contract_version": "1.0.0",
+  "enumeration": {
+    "change_groups": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "conditions": [
+      "AB",
+      "BA",
+      "AA",
+      "BB"
+    ],
+    "groups": 16,
+    "rows": 128,
+    "unit_note": "16 controlled groups expanded to 128 controlled inputs; not 128 independent samples",
+    "versions": [
+      0,
+      1
+    ]
+  },
+  "main_reading": {
+    "count": 2,
+    "counterexample_files": [
+      "counterexamples/SLOT_ID.json",
+      "counterexamples/INVERT_TARGET.json"
+    ],
+    "definition": "number of the 5 non-ORACLE strategies that pass R0 while failing R1",
+    "non_oracle_strategies": 5,
+    "pass_r0_fail_r1": [
+      "SLOT_ID",
+      "INVERT_TARGET"
+    ]
+  },
+  "strategies": {
+    "CONST_APPEAR": {
+      "r0": {
+        "aa_bb_nochange": {
+          "failed_rows": [
+            "g00|AA|v0",
+            "g00|AA|v1",
+            "g00|BB|v0",
+            "g00|BB|v1",
+            "g01|AA|v0",
+            "g01|AA|v1",
+            "g01|BB|v0",
+            "g01|BB|v1",
+            "g02|AA|v0",
+            "g02|AA|v1",
+            "g02|BB|v0",
+            "g02|BB|v1",
+            "g03|AA|v0",
+            "g03|AA|v1",
+            "g03|BB|v0",
+            "g03|BB|v1",
+            "g04|AA|v0",
+            "g04|AA|v1",
+            "g04|BB|v0",
+            "g04|BB|v1",
+            "g05|AA|v0",
+            "g05|AA|v1",
+            "g05|BB|v0",
+            "g05|BB|v1",
+            "g06|AA|v0",
+            "g06|AA|v1",
+            "g06|BB|v0",
+            "g06|BB|v1",
+            "g07|AA|v0",
+            "g07|AA|v1",
+            "g07|BB|v0",
+            "g07|BB|v1",
+            "g08|AA|v0",
+            "g08|AA|v1",
+            "g08|BB|v0",
+            "g08|BB|v1",
+            "g09|AA|v0",
+            "g09|AA|v1",
+            "g09|BB|v0",
+            "g09|BB|v1",
+            "g10|AA|v0",
+            "g10|AA|v1",
+            "g10|BB|v0",
+            "g10|BB|v1",
+            "g11|AA|v0",
+            "g11|AA|v1",
+            "g11|BB|v0",
+            "g11|BB|v1",
+            "g12|AA|v0",
+            "g12|AA|v1",
+            "g12|BB|v0",
+            "g12|BB|v1",
+            "g13|AA|v0",
+            "g13|AA|v1",
+            "g13|BB|v0",
+            "g13|BB|v1",
+            "g14|AA|v0",
+            "g14|AA|v1",
+            "g14|BB|v0",
+            "g14|BB|v1",
+            "g15|AA|v0",
+            "g15|AA|v1",
+            "g15|BB|v0",
+            "g15|BB|v1"
+          ],
+          "pass": 0,
+          "per_version": {
+            "0": {
+              "pass": 0,
+              "total": 32
+            },
+            "1": {
+              "pass": 0,
+              "total": 32
+            }
+          },
+          "total": 64
+        },
+        "pass": false,
+        "relation": {
+          "failed_cells": [
+            "g04|AB/BA|v0",
+            "g04|AB/BA|v1",
+            "g05|AB/BA|v0",
+            "g05|AB/BA|v1",
+            "g06|AB/BA|v0",
+            "g06|AB/BA|v1",
+            "g07|AB/BA|v0",
+            "g07|AB/BA|v1",
+            "g08|AB/BA|v0",
+            "g08|AB/BA|v1",
+            "g09|AB/BA|v0",
+            "g09|AB/BA|v1",
+            "g10|AB/BA|v0",
+            "g10|AB/BA|v1",
+            "g11|AB/BA|v0",
+            "g11|AB/BA|v1"
+          ],
+          "pass": 0,
+          "per_version": {
+            "0": {
+              "pass": 0,
+              "total": 8
+            },
+            "1": {
+              "pass": 0,
+              "total": 8
+            }
+          },
+          "total": 16
+        }
+      },
+      "r0_pass_r1_fail": false,
+      "r1": {
+        "aa_bb_nochange": {
+          "failed_rows": [
+            "g00|AA|v0",
+            "g00|AA|v1",
+            "g00|BB|v0",
+            "g00|BB|v1",
+            "g01|AA|v0",
+            "g01|AA|v1",
+            "g01|BB|v0",
+            "g01|BB|v1",
+            "g02|AA|v0",
+            "g02|AA|v1",
+            "g02|BB|v0",
+            "g02|BB|v1",
+            "g03|AA|v0",
+            "g03|AA|v1",
+            "g03|BB|v0",
+            "g03|BB|v1",
+            "g04|AA|v0",
+            "g04|AA|v1",
+            "g04|BB|v0",
+            "g04|BB|v1",
+            "g05|AA|v0",
+            "g05|AA|v1",
+            "g05|BB|v0",
+            "g05|BB|v1",
+            "g06|AA|v0",
+            "g06|AA|v1",
+            "g06|BB|v0",
+            "g06|BB|v1",
+            "g07|AA|v0",
+            "g07|AA|v1",
+            "g07|BB|v0",
+            "g07|BB|v1",
+            "g08|AA|v0",
+            "g08|AA|v1",
+            "g08|BB|v0",
+            "g08|BB|v1",
+            "g09|AA|v0",
+            "g09|AA|v1",
+            "g09|BB|v0",
+            "g09|BB|v1",
+            "g10|AA|v0",
+            "g10|AA|v1",
+            "g10|BB|v0",
+            "g10|BB|v1",
+            "g11|AA|v0",
+            "g11|AA|v1",
+            "g11|BB|v0",
+            "g11|BB|v1",
+            "g12|AA|v0",
+            "g12|AA|v1",
+            "g12|BB|v0",
+            "g12|BB|v1",
+            "g13|AA|v0",
+            "g13|AA|v1",
+            "g13|BB|v0",
+            "g13|BB|v1",
+            "g14|AA|v0",
+            "g14|AA|v1",
+            "g14|BB|v0",
+            "g14|BB|v1",
+            "g15|AA|v0",
+            "g15|AA|v1",
+            "g15|BB|v0",
+            "g15|BB|v1"
+          ],
+          "pass": 0,
+          "per_version": {
+            "0": {
+              "pass": 0,
+              "total": 32
+            },
+            "1": {
+              "pass": 0,
+              "total": 32
+            }
+          },
+          "total": 64
+        },
+        "accounting": {
+          "correct": 16,
+          "illegal": 0,
+          "missing": 0,
+          "rows": 128,
+          "unknown": 0,
+          "wrong": 112,
+          "wrong_rows": [
+            "g00|AB|v0",
+            "g00|AB|v1",
+            "g00|BA|v0",
+            "g00|BA|v1",
+            "g00|AA|v0",
+            "g00|AA|v1",
+            "g00|BB|v0",
+            "g00|BB|v1",
+            "g01|AB|v0",
+            "g01|AB|v1",
+            "g01|BA|v0",
+            "g01|BA|v1",
+            "g01|AA|v0",
+            "g01|AA|v1",
+            "g01|BB|v0",
+            "g01|BB|v1",
+            "g02|AB|v0",
+            "g02|AB|v1",
+            "g02|BA|v0",
+            "g02|BA|v1",
+            "g02|AA|v0",
+            "g02|AA|v1",
+            "g02|BB|v0",
+            "g02|BB|v1",
+            "g03|AB|v0",
+            "g03|AB|v1",
+            "g03|BA|v0",
+            "g03|BA|v1",
+            "g03|AA|v0",
+            "g03|AA|v1",
+            "g03|BB|v0",
+            "g03|BB|v1",
+            "g04|BA|v0",
+            "g04|BA|v1",
+            "g04|AA|v0",
+            "g04|AA|v1",
+            "g04|BB|v0",
+            "g04|BB|v1",
+            "g05|BA|v0",
+            "g05|BA|v1",
+            "g05|AA|v0",
+            "g05|AA|v1",
+            "g05|BB|v0",
+            "g05|BB|v1",
+            "g06|BA|v0",
+            "g06|BA|v1",
+            "g06|AA|v0",
+            "g06|AA|v1",
+            "g06|BB|v0",
+            "g06|BB|v1",
+            "g07|BA|v0",
+            "g07|BA|v1",
+            "g07|AA|v0",
+            "g07|AA|v1",
+            "g07|BB|v0",
+            "g07|BB|v1",
+            "g08|AB|v0",
+            "g08|AB|v1",
+            "g08|AA|v0",
+            "g08|AA|v1",
+            "g08|BB|v0",
+            "g08|BB|v1",
+            "g09|AB|v0",
+            "g09|AB|v1",
+            "g09|AA|v0",
+            "g09|AA|v1",
+            "g09|BB|v0",
+            "g09|BB|v1",
+            "g10|AB|v0",
+            "g10|AB|v1",
+            "g10|AA|v0",
+            "g10|AA|v1",
+            "g10|BB|v0",
+            "g10|BB|v1",
+            "g11|AB|v0",
+            "g11|AB|v1",
+            "g11|AA|v0",
+            "g11|AA|v1",
+            "g11|BB|v0",
+            "g11|BB|v1",
+            "g12|AB|v0",
+            "g12|AB|v1",
+            "g12|BA|v0",
+            "g12|BA|v1",
+            "g12|AA|v0",
+            "g12|AA|v1",
+            "g12|BB|v0",
+            "g12|BB|v1",
+            "g13|AB|v0",
+            "g13|AB|v1",
+            "g13|BA|v0",
+            "g13|BA|v1",
+            "g13|AA|v0",
+            "g13|AA|v1",
+            "g13|BB|v0",
+            "g13|BB|v1",
+            "g14|AB|v0",
+            "g14|AB|v1",
+            "g14|BA|v0",
+            "g14|BA|v1",
+            "g14|AA|v0",
+            "g14|AA|v1",
+            "g14|BB|v0",
+            "g14|BB|v1",
+            "g15|AB|v0",
+            "g15|AB|v1",
+            "g15|BA|v0",
+            "g15|BA|v1",
+            "g15|AA|v0",
+            "g15|AA|v1",
+            "g15|BB|v0",
+            "g15|BB|v1"
+          ]
+        },
+        "components": {
+          "aa_bb_all": false,
+          "dir_change_rows_all_correct": false,
+          "dir_relation_all": false,
+          "inv_all_pairs": true,
+          "joint_all_correct": false,
+          "mft_all_correct": false,
+          "no_unknown_missing_illegal": true
+        },
+        "dir": {
+          "change_pairs_both_correct": 0,
+          "change_pairs_total": 16,
+          "change_rows_correct": 16,
+          "change_rows_total": 32,
+          "change_wrong_rows": [
+            "g04|BA|v0",
+            "g04|BA|v1",
+            "g05|BA|v0",
+            "g05|BA|v1",
+            "g06|BA|v0",
+            "g06|BA|v1",
+            "g07|BA|v0",
+            "g07|BA|v1",
+            "g08|AB|v0",
+            "g08|AB|v1",
+            "g09|AB|v0",
+            "g09|AB|v1",
+            "g10|AB|v0",
+            "g10|AB|v1",
+            "g11|AB|v0",
+            "g11|AB|v1"
+          ],
+          "relation": {
+            "failed_cells": [
+              "g04|AB/BA|v0",
+              "g04|AB/BA|v1",
+              "g05|AB/BA|v0",
+              "g05|AB/BA|v1",
+              "g06|AB/BA|v0",
+              "g06|AB/BA|v1",
+              "g07|AB/BA|v0",
+              "g07|AB/BA|v1",
+              "g08|AB/BA|v0",
+              "g08|AB/BA|v1",
+              "g09|AB/BA|v0",
+              "g09|AB/BA|v1",
+              "g10|AB/BA|v0",
+              "g10|AB/BA|v1",
+              "g11|AB/BA|v0",
+              "g11|AB/BA|v1"
+            ],
+            "pass": 0,
+            "per_version": {
+              "0": {
+                "pass": 0,
+                "total": 8
+              },
+              "1": {
+                "pass": 0,
+                "total": 8
+              }
+            },
+            "total": 16
+          }
+        },
+        "failed_components": [
+          "mft_all_correct",
+          "joint_all_correct",
+          "dir_relation_all",
+          "dir_change_rows_all_correct",
+          "aa_bb_all"
+        ],
+        "inv": {
+          "failed_pairs": [],
+          "pass": 64,
+          "per_condition": {
+            "AA": {
+              "pass": 16,
+              "total": 16
+            },
+            "AB": {
+              "pass": 16,
+              "total": 16
+            },
+            "BA": {
+              "pass": 16,
+              "total": 16
+            },
+            "BB": {
+              "pass": 16,
+              "total": 16
+            }
+          },
+          "total": 64
+        },
+        "joint_ab_ba": {
+          "failed_pairs": [
+            "g00|AB+BA|v0",
+            "g00|AB+BA|v1",
+            "g01|AB+BA|v0",
+            "g01|AB+BA|v1",
+            "g02|AB+BA|v0",
+            "g02|AB+BA|v1",
+            "g03|AB+BA|v0",
+            "g03|AB+BA|v1",
+            "g04|AB+BA|v0",
+            "g04|AB+BA|v1",
+            "g05|AB+BA|v0",
+            "g05|AB+BA|v1",
+            "g06|AB+BA|v0",
+            "g06|AB+BA|v1",
+            "g07|AB+BA|v0",
+            "g07|AB+BA|v1",
+            "g08|AB+BA|v0",
+            "g08|AB+BA|v1",
+            "g09|AB+BA|v0",
+            "g09|AB+BA|v1",
+            "g10|AB+BA|v0",
+            "g10|AB+BA|v1",
+            "g11|AB+BA|v0",
+            "g11|AB+BA|v1",
+            "g12|AB+BA|v0",
+            "g12|AB+BA|v1",
+            "g13|AB+BA|v0",
+            "g13|AB+BA|v1",
+            "g14|AB+BA|v0",
+            "g14|AB+BA|v1",
+            "g15|AB+BA|v0",
+            "g15|AB+BA|v1"
+          ],
+          "pass": 0,
+          "per_version": {
+            "0": {
+              "pass": 0,
+              "total": 16
+            },
+            "1": {
+              "pass": 0,
+              "total": 16
+            }
+          },
+          "total": 32
+        },
+        "mft": {
+          "by_class_condition_version": {
+            "APPEAR|AB|v0": {
+              "correct": 4,
+              "total": 4
+            },
+            "APPEAR|AB|v1": {
+              "correct": 4,
+              "total": 4
+            },
+            "APPEAR|BA|v0": {
+              "correct": 4,
+              "total": 4
+            },
+            "APPEAR|BA|v1": {
+              "correct": 4,
+              "total": 4
+            },
+            "DISAPPEAR|AB|v0": {
+              "correct": 0,
+              "total": 4
+            },
+            "DISAPPEAR|AB|v1": {
+              "correct": 0,
+              "total": 4
+            },
+            "DISAPPEAR|BA|v0": {
+              "correct": 0,
+              "total": 4
+            },
+            "DISAPPEAR|BA|v1": {
+              "correct": 0,
+              "total": 4
+            },
+            "NO_EXISTENCE_CHANGE|AA|v0": {
+              "correct": 0,
+              "total": 16
+            },
+            "NO_EXISTENCE_CHANGE|AA|v1": {
+              "correct": 0,
+              "total": 16
+            },
+            "NO_EXISTENCE_CHANGE|AB|v0": {
+              "correct": 0,
+              "total": 8
+            },
+            "NO_EXISTENCE_CHANGE|AB|v1": {
+              "correct": 0,
+              "total": 8
+            },
+            "NO_EXISTENCE_CHANGE|BA|v0": {
+              "correct": 0,
+              "total": 8
+            },
+            "NO_EXISTENCE_CHANGE|BA|v1": {
+              "correct": 0,
+              "total": 8
+            },
+            "NO_EXISTENCE_CHANGE|BB|v0": {
+              "correct": 0,
+              "total": 16
+            },
+            "NO_EXISTENCE_CHANGE|BB|v1": {
+              "correct": 0,
+              "total": 16
+            }
+          },
+          "by_condition_version": {
+            "AA|v0": {
+              "correct": 0,
+              "total": 16
+            },
+            "AA|v1": {
+              "correct": 0,
+              "total": 16
+            },
+            "AB|v0": {
+              "correct": 4,
+              "total": 16
+            },
+            "AB|v1": {
+              "correct": 4,
+              "total": 16
+            },
+            "BA|v0": {
+              "correct": 4,
+              "total": 16
+            },
+            "BA|v1": {
+              "correct": 4,
+              "total": 16
+            },
+            "BB|v0": {
+              "correct": 0,
+              "total": 16
+            },
+            "BB|v1": {
+              "correct": 0,
+              "total": 16
+            }
+          },
+          "correct": 16,
+          "total": 128
+        },
+        "pass": false
+      },
+      "reads": [],
+      "rule": "always APPEAR"
+    },
+    "CONST_NULL": {
+      "r0": {
+        "aa_bb_nochange": {
+          "failed_rows": [],
+          "pass": 64,
+          "per_version": {
+            "0": {
+              "pass": 32,
+              "total": 32
+            },
+            "1": {
+              "pass": 32,
+              "total": 32
+            }
+          },
+          "total": 64
+        },
+        "pass": false,
+        "relation": {
+          "failed_cells": [
+            "g04|AB/BA|v0",
+            "g04|AB/BA|v1",
+            "g05|AB/BA|v0",
+            "g05|AB/BA|v1",
+            "g06|AB/BA|v0",
+            "g06|AB/BA|v1",
+            "g07|AB/BA|v0",
+            "g07|AB/BA|v1",
+            "g08|AB/BA|v0",
+            "g08|AB/BA|v1",
+            "g09|AB/BA|v0",
+            "g09|AB/BA|v1",
+            "g10|AB/BA|v0",
+            "g10|AB/BA|v1",
+            "g11|AB/BA|v0",
+            "g11|AB/BA|v1"
+          ],
+          "pass": 0,
+          "per_version": {
+            "0": {
+              "pass": 0,
+              "total": 8
+            },
+            "1": {
+              "pass": 0,
+              "total": 8
+            }
+          },
+          "total": 16
+        }
+      },
+      "r0_pass_r1_fail": false,
+      "r1": {
+        "aa_bb_nochange": {
+          "failed_rows": [],
+          "pass": 64,
+          "per_version": {
+            "0": {
+              "pass": 32,
+              "total": 32
+            },
+            "1": {
+              "pass": 32,
+              "total": 32
+            }
+          },
+          "total": 64
+        },
+        "accounting": {
+          "correct": 96,
+          "illegal": 0,
+          "missing": 0,
+          "rows": 128,
+          "unknown": 0,
+          "wrong": 32,
+          "wrong_rows": [
+            "g04|AB|v0",
+            "g04|AB|v1",
+            "g04|BA|v0",
+            "g04|BA|v1",
+            "g05|AB|v0",
+            "g05|AB|v1",
+            "g05|BA|v0",
+            "g05|BA|v1",
+            "g06|AB|v0",
+            "g06|AB|v1",
+            "g06|BA|v0",
+            "g06|BA|v1",
+            "g07|AB|v0",
+            "g07|AB|v1",
+            "g07|BA|v0",
+            "g07|BA|v1",
+            "g08|AB|v0",
+            "g08|AB|v1",
+            "g08|BA|v0",
+            "g08|BA|v1",
+            "g09|AB|v0",
+            "g09|AB|v1",
+            "g09|BA|v0",
+            "g09|BA|v1",
+            "g10|AB|v0",
+            "g10|AB|v1",
+            "g10|BA|v0",
+            "g10|BA|v1",
+            "g11|AB|v0",
+            "g11|AB|v1",
+            "g11|BA|v0",
+            "g11|BA|v1"
+          ]
+        },
+        "components": {
+          "aa_bb_all": true,
+          "dir_change_rows_all_correct": false,
+          "dir_relation_all": false,
+          "inv_all_pairs": true,
+          "joint_all_correct": false,
+          "mft_all_correct": false,
+          "no_unknown_missing_illegal": true
+        },
+        "dir": {
+          "change_pairs_both_correct": 0,
+          "change_pairs_total": 16,
+          "change_rows_correct": 0,
+          "change_rows_total": 32,
+          "change_wrong_rows": [
+            "g04|AB|v0",
+            "g04|AB|v1",
+            "g04|BA|v0",
+            "g04|BA|v1",
+            "g05|AB|v0",
+            "g05|AB|v1",
+            "g05|BA|v0",
+            "g05|BA|v1",
+            "g06|AB|v0",
+            "g06|AB|v1",
+            "g06|BA|v0",
+            "g06|BA|v1",
+            "g07|AB|v0",
+            "g07|AB|v1",
+            "g07|BA|v0",
+            "g07|BA|v1",
+            "g08|AB|v0",
+            "g08|AB|v1",
+            "g08|BA|v0",
+            "g08|BA|v1",
+            "g09|AB|v0",
+            "g09|AB|v1",
+            "g09|BA|v0",
+            "g09|BA|v1",
+            "g10|AB|v0",
+            "g10|AB|v1",
+            "g10|BA|v0",
+            "g10|BA|v1",
+            "g11|AB|v0",
+            "g11|AB|v1",
+            "g11|BA|v0",
+            "g11|BA|v1"
+          ],
+          "relation": {
+            "failed_cells": [
+              "g04|AB/BA|v0",
+              "g04|AB/BA|v1",
+              "g05|AB/BA|v0",
+              "g05|AB/BA|v1",
+              "g06|AB/BA|v0",
+              "g06|AB/BA|v1",
+              "g07|AB/BA|v0",
+              "g07|AB/BA|v1",
+              "g08|AB/BA|v0",
+              "g08|AB/BA|v1",
+              "g09|AB/BA|v0",
+              "g09|AB/BA|v1",
+              "g10|AB/BA|v0",
+              "g10|AB/BA|v1",
+              "g11|AB/BA|v0",
+              "g11|AB/BA|v1"
+            ],
+            "pass": 0,
+            "per_version": {
+              "0": {
+                "pass": 0,
+                "total": 8
+              },
+              "1": {
+                "pass": 0,
+                "total": 8
+              }
+            },
+            "total": 16
+          }
+        },
+        "failed_components": [
+          "mft_all_correct",
+          "joint_all_correct",
+          "dir_relation_all",
+          "dir_change_rows_all_correct"
+        ],
+        "inv": {
+          "failed_pairs": [],
+          "pass": 64,
+          "per_condition": {
+            "AA": {
+              "pass": 16,
+              "total": 16
+            },
+            "AB": {
+              "pass": 16,
+              "total": 16
+            },
+            "BA": {
+              "pass": 16,
+              "total": 16
+            },
+            "BB": {
+              "pass": 16,
+              "total": 16
+            }
+          },
+          "total": 64
+        },
+        "joint_ab_ba": {
+          "failed_pairs": [
+            "g04|AB+BA|v0",
+            "g04|AB+BA|v1",
+            "g05|AB+BA|v0",
+            "g05|AB+BA|v1",
+            "g06|AB+BA|v0",
+            "g06|AB+BA|v1",
+            "g07|AB+BA|v0",
+            "g07|AB+BA|v1",
+            "g08|AB+BA|v0",
+            "g08|AB+BA|v1",
+            "g09|AB+BA|v0",
+            "g09|AB+BA|v1",
+            "g10|AB+BA|v0",
+            "g10|AB+BA|v1",
+            "g11|AB+BA|v0",
+            "g11|AB+BA|v1"
+          ],
+          "pass": 16,
+          "per_version": {
+            "0": {
+              "pass": 8,
+              "total": 16
+            },
+            "1": {
+              "pass": 8,
+              "total": 16
+            }
+          },
+          "total": 32
+        },
+        "mft": {
+          "by_class_condition_version": {
+            "APPEAR|AB|v0": {
+              "correct": 0,
+              "total": 4
+            },
+            "APPEAR|AB|v1": {
+              "correct": 0,
+              "total": 4
+            },
+            "APPEAR|BA|v0": {
+              "correct": 0,
+              "total": 4
+            },
+            "APPEAR|BA|v1": {
+              "correct": 0,
+              "total": 4
+            },
+            "DISAPPEAR|AB|v0": {
+              "correct": 0,
+              "total": 4
+            },
+            "DISAPPEAR|AB|v1": {
+              "correct": 0,
+              "total": 4
+            },
+            "DISAPPEAR|BA|v0": {
+              "correct": 0,
+              "total": 4
+            },
+            "DISAPPEAR|BA|v1": {
+              "correct": 0,
+              "total": 4
+            },
+            "NO_EXISTENCE_CHANGE|AA|v0": {
+              "correct": 16,
+              "total": 16
+            },
+            "NO_EXISTENCE_CHANGE|AA|v1": {
+              "correct": 16,
+              "total": 16
+            },
+            "NO_EXISTENCE_CHANGE|AB|v0": {
+              "correct": 8,
+              "total": 8
+            },
+            "NO_EXISTENCE_CHANGE|AB|v1": {
+              "correct": 8,
+              "total": 8
+            },
+            "NO_EXISTENCE_CHANGE|BA|v0": {
+              "correct": 8,
+              "total": 8
+            },
+            "NO_EXISTENCE_CHANGE|BA|v1": {
+              "correct": 8,
+              "total": 8
+            },
+            "NO_EXISTENCE_CHANGE|BB|v0": {
+              "correct": 16,
+              "total": 16
+            },
+            "NO_EXISTENCE_CHANGE|BB|v1": {
+              "correct": 16,
+              "total": 16
+            }
+          },
+          "by_condition_version": {
+            "AA|v0": {
+              "correct": 16,
+              "total": 16
+            },
+            "AA|v1": {
+              "correct": 16,
+              "total": 16
+            },
+            "AB|v0": {
+              "correct": 8,
+              "total": 16
+            },
+            "AB|v1": {
+              "correct": 8,
+              "total": 16
+            },
+            "BA|v0": {
+              "correct": 8,
+              "total": 16
+            },
+            "BA|v1": {
+              "correct": 8,
+              "total": 16
+            },
+            "BB|v0": {
+              "correct": 16,
+              "total": 16
+            },
+            "BB|v1": {
+              "correct": 16,
+              "total": 16
+            }
+          },
+          "correct": 96,
+          "total": 128
+        },
+        "pass": false
+      },
+      "reads": [],
+      "rule": "always NO_EXISTENCE_CHANGE"
+    },
+    "DISTRACTOR": {
+      "r0": {
+        "aa_bb_nochange": {
+          "failed_rows": [],
+          "pass": 64,
+          "per_version": {
+            "0": {
+              "pass": 32,
+              "total": 32
+            },
+            "1": {
+              "pass": 32,
+              "total": 32
+            }
+          },
+          "total": 64
+        },
+        "pass": false,
+        "relation": {
+          "failed_cells": [
+            "g04|AB/BA|v0",
+            "g04|AB/BA|v1",
+            "g07|AB/BA|v0",
+            "g07|AB/BA|v1",
+            "g08|AB/BA|v0",
+            "g08|AB/BA|v1",
+            "g11|AB/BA|v0",
+            "g11|AB/BA|v1"
+          ],
+          "pass": 8,
+          "per_version": {
+            "0": {
+              "pass": 4,
+              "total": 8
+            },
+            "1": {
+              "pass": 4,
+              "total": 8
+            }
+          },
+          "total": 16
+        }
+      },
+      "r0_pass_r1_fail": false,
+      "r1": {
+        "aa_bb_nochange": {
+          "failed_rows": [],
+          "pass": 64,
+          "per_version": {
+            "0": {
+              "pass": 32,
+              "total": 32
+            },
+            "1": {
+              "pass": 32,
+              "total": 32
+            }
+          },
+          "total": 64
+        },
+        "accounting": {
+          "correct": 88,
+          "illegal": 0,
+          "missing": 0,
+          "rows": 128,
+          "unknown": 0,
+          "wrong": 40,
+          "wrong_rows": [
+            "g01|AB|v0",
+            "g01|AB|v1",
+            "g01|BA|v0",
+            "g01|BA|v1",
+            "g02|AB|v0",
+            "g02|AB|v1",
+            "g02|BA|v0",
+            "g02|BA|v1",
+            "g04|AB|v0",
+            "g04|AB|v1",
+            "g04|BA|v0",
+            "g04|BA|v1",
+            "g06|AB|v0",
+            "g06|AB|v1",
+            "g06|BA|v0",
+            "g06|BA|v1",
+            "g07|AB|v0",
+            "g07|AB|v1",
+            "g07|BA|v0",
+            "g07|BA|v1",
+            "g08|AB|v0",
+            "g08|AB|v1",
+            "g08|BA|v0",
+            "g08|BA|v1",
+            "g09|AB|v0",
+            "g09|AB|v1",
+            "g09|BA|v0",
+            "g09|BA|v1",
+            "g11|AB|v0",
+            "g11|AB|v1",
+            "g11|BA|v0",
+            "g11|BA|v1",
+            "g13|AB|v0",
+            "g13|AB|v1",
+            "g13|BA|v0",
+            "g13|BA|v1",
+            "g14|AB|v0",
+            "g14|AB|v1",
+            "g14|BA|v0",
+            "g14|BA|v1"
+          ]
+        },
+        "components": {
+          "aa_bb_all": true,
+          "dir_change_rows_all_correct": false,
+          "dir_relation_all": false,
+          "inv_all_pairs": true,
+          "joint_all_correct": false,
+          "mft_all_correct": false,
+          "no_unknown_missing_illegal": true
+        },
+        "dir": {
+          "change_pairs_both_correct": 4,
+          "change_pairs_total": 16,
+          "change_rows_correct": 8,
+          "change_rows_total": 32,
+          "change_wrong_rows": [
+            "g04|AB|v0",
+            "g04|AB|v1",
+            "g04|BA|v0",
+            "g04|BA|v1",
+            "g06|AB|v0",
+            "g06|AB|v1",
+            "g06|BA|v0",
+            "g06|BA|v1",
+            "g07|AB|v0",
+            "g07|AB|v1",
+            "g07|BA|v0",
+            "g07|BA|v1",
+            "g08|AB|v0",
+            "g08|AB|v1",
+            "g08|BA|v0",
+            "g08|BA|v1",
+            "g09|AB|v0",
+            "g09|AB|v1",
+            "g09|BA|v0",
+            "g09|BA|v1",
+            "g11|AB|v0",
+            "g11|AB|v1",
+            "g11|BA|v0",
+            "g11|BA|v1"
+          ],
+          "relation": {
+            "failed_cells": [
+              "g04|AB/BA|v0",
+              "g04|AB/BA|v1",
+              "g07|AB/BA|v0",
+              "g07|AB/BA|v1",
+              "g08|AB/BA|v0",
+              "g08|AB/BA|v1",
+              "g11|AB/BA|v0",
+              "g11|AB/BA|v1"
+            ],
+            "pass": 8,
+            "per_version": {
+              "0": {
+                "pass": 4,
+                "total": 8
+              },
+              "1": {
+                "pass": 4,
+                "total": 8
+              }
+            },
+            "total": 16
+          }
+        },
+        "failed_components": [
+          "mft_all_correct",
+          "joint_all_correct",
+          "dir_relation_all",
+          "dir_change_rows_all_correct"
+        ],
+        "inv": {
+          "failed_pairs": [],
+          "pass": 64,
+          "per_condition": {
+            "AA": {
+              "pass": 16,
+              "total": 16
+            },
+            "AB": {
+              "pass": 16,
+              "total": 16
+            },
+            "BA": {
+              "pass": 16,
+              "total": 16
+            },
+            "BB": {
+              "pass": 16,
+              "total": 16
+            }
+          },
+          "total": 64
+        },
+        "joint_ab_ba": {
+          "failed_pairs": [
+            "g01|AB+BA|v0",
+            "g01|AB+BA|v1",
+            "g02|AB+BA|v0",
+            "g02|AB+BA|v1",
+            "g04|AB+BA|v0",
+            "g04|AB+BA|v1",
+            "g06|AB+BA|v0",
+            "g06|AB+BA|v1",
+            "g07|AB+BA|v0",
+            "g07|AB+BA|v1",
+            "g08|AB+BA|v0",
+            "g08|AB+BA|v1",
+            "g09|AB+BA|v0",
+            "g09|AB+BA|v1",
+            "g11|AB+BA|v0",
+            "g11|AB+BA|v1",
+            "g13|AB+BA|v0",
+            "g13|AB+BA|v1",
+            "g14|AB+BA|v0",
+            "g14|AB+BA|v1"
+          ],
+          "pass": 12,
+          "per_version": {
+            "0": {
+              "pass": 6,
+              "total": 16
+            },
+            "1": {
+              "pass": 6,
+              "total": 16
+            }
+          },
+          "total": 32
+        },
+        "mft": {
+          "by_class_condition_version": {
+            "APPEAR|AB|v0": {
+              "correct": 1,
+              "total": 4
+            },
+            "APPEAR|AB|v1": {
+              "correct": 1,
+              "total": 4
+            },
+            "APPEAR|BA|v0": {
+              "correct": 1,
+              "total": 4
+            },
+            "APPEAR|BA|v1": {
+              "correct": 1,
+              "total": 4
+            },
+            "DISAPPEAR|AB|v0": {
+              "correct": 1,
+              "total": 4
+            },
+            "DISAPPEAR|AB|v1": {
+              "correct": 1,
+              "total": 4
+            },
+            "DISAPPEAR|BA|v0": {
+              "correct": 1,
+              "total": 4
+            },
+            "DISAPPEAR|BA|v1": {
+              "correct": 1,
+              "total": 4
+            },
+            "NO_EXISTENCE_CHANGE|AA|v0": {
+              "correct": 16,
+              "total": 16
+            },
+            "NO_EXISTENCE_CHANGE|AA|v1": {
+              "correct": 16,
+              "total": 16
+            },
+            "NO_EXISTENCE_CHANGE|AB|v0": {
+              "correct": 4,
+              "total": 8
+            },
+            "NO_EXISTENCE_CHANGE|AB|v1": {
+              "correct": 4,
+              "total": 8
+            },
+            "NO_EXISTENCE_CHANGE|BA|v0": {
+              "correct": 4,
+              "total": 8
+            },
+            "NO_EXISTENCE_CHANGE|BA|v1": {
+              "correct": 4,
+              "total": 8
+            },
+            "NO_EXISTENCE_CHANGE|BB|v0": {
+              "correct": 16,
+              "total": 16
+            },
+            "NO_EXISTENCE_CHANGE|BB|v1": {
+              "correct": 16,
+              "total": 16
+            }
+          },
+          "by_condition_version": {
+            "AA|v0": {
+              "correct": 16,
+              "total": 16
+            },
+            "AA|v1": {
+              "correct": 16,
+              "total": 16
+            },
+            "AB|v0": {
+              "correct": 6,
+              "total": 16
+            },
+            "AB|v1": {
+              "correct": 6,
+              "total": 16
+            },
+            "BA|v0": {
+              "correct": 6,
+              "total": 16
+            },
+            "BA|v1": {
+              "correct": 6,
+              "total": 16
+            },
+            "BB|v0": {
+              "correct": 16,
+              "total": 16
+            },
+            "BB|v1": {
+              "correct": 16,
+              "total": 16
+            }
+          },
+          "correct": 88,
+          "total": 128
+        },
+        "pass": false
+      },
+      "reads": [
+        "distractor_exist_first",
+        "distractor_exist_second"
+      ],
+      "rule": "direction(distractor_exist_first, distractor_exist_second)"
+    },
+    "INVERT_TARGET": {
+      "r0": {
+        "aa_bb_nochange": {
+          "failed_rows": [],
+          "pass": 64,
+          "per_version": {
+            "0": {
+              "pass": 32,
+              "total": 32
+            },
+            "1": {
+              "pass": 32,
+              "total": 32
+            }
+          },
+          "total": 64
+        },
+        "pass": true,
+        "relation": {
+          "failed_cells": [],
+          "pass": 16,
+          "per_version": {
+            "0": {
+              "pass": 8,
+              "total": 8
+            },
+            "1": {
+              "pass": 8,
+              "total": 8
+            }
+          },
+          "total": 16
+        }
+      },
+      "r0_pass_r1_fail": true,
+      "r1": {
+        "aa_bb_nochange": {
+          "failed_rows": [],
+          "pass": 64,
+          "per_version": {
+            "0": {
+              "pass": 32,
+              "total": 32
+            },
+            "1": {
+              "pass": 32,
+              "total": 32
+            }
+          },
+          "total": 64
+        },
+        "accounting": {
+          "correct": 96,
+          "illegal": 0,
+          "missing": 0,
+          "rows": 128,
+          "unknown": 0,
+          "wrong": 32,
+          "wrong_rows": [
+            "g04|AB|v0",
+            "g04|AB|v1",
+            "g04|BA|v0",
+            "g04|BA|v1",
+            "g05|AB|v0",
+            "g05|AB|v1",
+            "g05|BA|v0",
+            "g05|BA|v1",
+            "g06|AB|v0",
+            "g06|AB|v1",
+            "g06|BA|v0",
+            "g06|BA|v1",
+            "g07|AB|v0",
+            "g07|AB|v1",
+            "g07|BA|v0",
+            "g07|BA|v1",
+            "g08|AB|v0",
+            "g08|AB|v1",
+            "g08|BA|v0",
+            "g08|BA|v1",
+            "g09|AB|v0",
+            "g09|AB|v1",
+            "g09|BA|v0",
+            "g09|BA|v1",
+            "g10|AB|v0",
+            "g10|AB|v1",
+            "g10|BA|v0",
+            "g10|BA|v1",
+            "g11|AB|v0",
+            "g11|AB|v1",
+            "g11|BA|v0",
+            "g11|BA|v1"
+          ]
+        },
+        "components": {
+          "aa_bb_all": true,
+          "dir_change_rows_all_correct": false,
+          "dir_relation_all": true,
+          "inv_all_pairs": true,
+          "joint_all_correct": false,
+          "mft_all_correct": false,
+          "no_unknown_missing_illegal": true
+        },
+        "dir": {
+          "change_pairs_both_correct": 0,
+          "change_pairs_total": 16,
+          "change_rows_correct": 0,
+          "change_rows_total": 32,
+          "change_wrong_rows": [
+            "g04|AB|v0",
+            "g04|AB|v1",
+            "g04|BA|v0",
+            "g04|BA|v1",
+            "g05|AB|v0",
+            "g05|AB|v1",
+            "g05|BA|v0",
+            "g05|BA|v1",
+            "g06|AB|v0",
+            "g06|AB|v1",
+            "g06|BA|v0",
+            "g06|BA|v1",
+            "g07|AB|v0",
+            "g07|AB|v1",
+            "g07|BA|v0",
+            "g07|BA|v1",
+            "g08|AB|v0",
+            "g08|AB|v1",
+            "g08|BA|v0",
+            "g08|BA|v1",
+            "g09|AB|v0",
+            "g09|AB|v1",
+            "g09|BA|v0",
+            "g09|BA|v1",
+            "g10|AB|v0",
+            "g10|AB|v1",
+            "g10|BA|v0",
+            "g10|BA|v1",
+            "g11|AB|v0",
+            "g11|AB|v1",
+            "g11|BA|v0",
+            "g11|BA|v1"
+          ],
+          "relation": {
+            "failed_cells": [],
+            "pass": 16,
+            "per_version": {
+              "0": {
+                "pass": 8,
+                "total": 8
+              },
+              "1": {
+                "pass": 8,
+                "total": 8
+              }
+            },
+            "total": 16
+          }
+        },
+        "failed_components": [
+          "mft_all_correct",
+          "joint_all_correct",
+          "dir_change_rows_all_correct"
+        ],
+        "inv": {
+          "failed_pairs": [],
+          "pass": 64,
+          "per_condition": {
+            "AA": {
+              "pass": 16,
+              "total": 16
+            },
+            "AB": {
+              "pass": 16,
+              "total": 16
+            },
+            "BA": {
+              "pass": 16,
+              "total": 16
+            },
+            "BB": {
+              "pass": 16,
+              "total": 16
+            }
+          },
+          "total": 64
+        },
+        "joint_ab_ba": {
+          "failed_pairs": [
+            "g04|AB+BA|v0",
+            "g04|AB+BA|v1",
+            "g05|AB+BA|v0",
+            "g05|AB+BA|v1",
+            "g06|AB+BA|v0",
+            "g06|AB+BA|v1",
+            "g07|AB+BA|v0",
+            "g07|AB+BA|v1",
+            "g08|AB+BA|v0",
+            "g08|AB+BA|v1",
+            "g09|AB+BA|v0",
+            "g09|AB+BA|v1",
+            "g10|AB+BA|v0",
+            "g10|AB+BA|v1",
+            "g11|AB+BA|v0",
+            "g11|AB+BA|v1"
+          ],
+          "pass": 16,
+          "per_version": {
+            "0": {
+              "pass": 8,
+              "total": 16
+            },
+            "1": {
+              "pass": 8,
+              "total": 16
+            }
+          },
+          "total": 32
+        },
+        "mft": {
+          "by_class_condition_version": {
+            "APPEAR|AB|v0": {
+              "correct": 0,
+              "total": 4
+            },
+            "APPEAR|AB|v1": {
+              "correct": 0,
+              "total": 4
+            },
+            "APPEAR|BA|v0": {
+              "correct": 0,
+              "total": 4
+            },
+            "APPEAR|BA|v1": {
+              "correct": 0,
+              "total": 4
+            },
+            "DISAPPEAR|AB|v0": {
+              "correct": 0,
+              "total": 4
+            },
+            "DISAPPEAR|AB|v1": {
+              "correct": 0,
+              "total": 4
+            },
+            "DISAPPEAR|BA|v0": {
+              "correct": 0,
+              "total": 4
+            },
+            "DISAPPEAR|BA|v1": {
+              "correct": 0,
+              "total": 4
+            },
+            "NO_EXISTENCE_CHANGE|AA|v0": {
+              "correct": 16,
+              "total": 16
+            },
+            "NO_EXISTENCE_CHANGE|AA|v1": {
+              "correct": 16,
+              "total": 16
+            },
+            "NO_EXISTENCE_CHANGE|AB|v0": {
+              "correct": 8,
+              "total": 8
+            },
+            "NO_EXISTENCE_CHANGE|AB|v1": {
+              "correct": 8,
+              "total": 8
+            },
+            "NO_EXISTENCE_CHANGE|BA|v0": {
+              "correct": 8,
+              "total": 8
+            },
+            "NO_EXISTENCE_CHANGE|BA|v1": {
+              "correct": 8,
+              "total": 8
+            },
+            "NO_EXISTENCE_CHANGE|BB|v0": {
+              "correct": 16,
+              "total": 16
+            },
+            "NO_EXISTENCE_CHANGE|BB|v1": {
+              "correct": 16,
+              "total": 16
+            }
+          },
+          "by_condition_version": {
+            "AA|v0": {
+              "correct": 16,
+              "total": 16
+            },
+            "AA|v1": {
+              "correct": 16,
+              "total": 16
+            },
+            "AB|v0": {
+              "correct": 8,
+              "total": 16
+            },
+            "AB|v1": {
+              "correct": 8,
+              "total": 16
+            },
+            "BA|v0": {
+              "correct": 8,
+              "total": 16
+            },
+            "BA|v1": {
+              "correct": 8,
+              "total": 16
+            },
+            "BB|v0": {
+              "correct": 16,
+              "total": 16
+            },
+            "BB|v1": {
+              "correct": 16,
+              "total": 16
+            }
+          },
+          "correct": 96,
+          "total": 128
+        },
+        "pass": false
+      },
+      "reads": [
+        "target_exist_first",
+        "target_exist_second"
+      ],
+      "rule": "direction(target_exist_first, target_exist_second) with APPEAR/DISAPPEAR swapped; NO_EXISTENCE_CHANGE kept"
+    },
+    "ORACLE": {
+      "r0": {
+        "aa_bb_nochange": {
+          "failed_rows": [],
+          "pass": 64,
+          "per_version": {
+            "0": {
+              "pass": 32,
+              "total": 32
+            },
+            "1": {
+              "pass": 32,
+              "total": 32
+            }
+          },
+          "total": 64
+        },
+        "pass": true,
+        "relation": {
+          "failed_cells": [],
+          "pass": 16,
+          "per_version": {
+            "0": {
+              "pass": 8,
+              "total": 8
+            },
+            "1": {
+              "pass": 8,
+              "total": 8
+            }
+          },
+          "total": 16
+        }
+      },
+      "r0_pass_r1_fail": false,
+      "r1": {
+        "aa_bb_nochange": {
+          "failed_rows": [],
+          "pass": 64,
+          "per_version": {
+            "0": {
+              "pass": 32,
+              "total": 32
+            },
+            "1": {
+              "pass": 32,
+              "total": 32
+            }
+          },
+          "total": 64
+        },
+        "accounting": {
+          "correct": 128,
+          "illegal": 0,
+          "missing": 0,
+          "rows": 128,
+          "unknown": 0,
+          "wrong": 0,
+          "wrong_rows": []
+        },
+        "components": {
+          "aa_bb_all": true,
+          "dir_change_rows_all_correct": true,
+          "dir_relation_all": true,
+          "inv_all_pairs": true,
+          "joint_all_correct": true,
+          "mft_all_correct": true,
+          "no_unknown_missing_illegal": true
+        },
+        "dir": {
+          "change_pairs_both_correct": 16,
+          "change_pairs_total": 16,
+          "change_rows_correct": 32,
+          "change_rows_total": 32,
+          "change_wrong_rows": [],
+          "relation": {
+            "failed_cells": [],
+            "pass": 16,
+            "per_version": {
+              "0": {
+                "pass": 8,
+                "total": 8
+              },
+              "1": {
+                "pass": 8,
+                "total": 8
+              }
+            },
+            "total": 16
+          }
+        },
+        "failed_components": [],
+        "inv": {
+          "failed_pairs": [],
+          "pass": 64,
+          "per_condition": {
+            "AA": {
+              "pass": 16,
+              "total": 16
+            },
+            "AB": {
+              "pass": 16,
+              "total": 16
+            },
+            "BA": {
+              "pass": 16,
+              "total": 16
+            },
+            "BB": {
+              "pass": 16,
+              "total": 16
+            }
+          },
+          "total": 64
+        },
+        "joint_ab_ba": {
+          "failed_pairs": [],
+          "pass": 32,
+          "per_version": {
+            "0": {
+              "pass": 16,
+              "total": 16
+            },
+            "1": {
+              "pass": 16,
+              "total": 16
+            }
+          },
+          "total": 32
+        },
+        "mft": {
+          "by_class_condition_version": {
+            "APPEAR|AB|v0": {
+              "correct": 4,
+              "total": 4
+            },
+            "APPEAR|AB|v1": {
+              "correct": 4,
+              "total": 4
+            },
+            "APPEAR|BA|v0": {
+              "correct": 4,
+              "total": 4
+            },
+            "APPEAR|BA|v1": {
+              "correct": 4,
+              "total": 4
+            },
+            "DISAPPEAR|AB|v0": {
+              "correct": 4,
+              "total": 4
+            },
+            "DISAPPEAR|AB|v1": {
+              "correct": 4,
+              "total": 4
+            },
+            "DISAPPEAR|BA|v0": {
+              "correct": 4,
+              "total": 4
+            },
+            "DISAPPEAR|BA|v1": {
+              "correct": 4,
+              "total": 4
+            },
+            "NO_EXISTENCE_CHANGE|AA|v0": {
+              "correct": 16,
+              "total": 16
+            },
+            "NO_EXISTENCE_CHANGE|AA|v1": {
+              "correct": 16,
+              "total": 16
+            },
+            "NO_EXISTENCE_CHANGE|AB|v0": {
+              "correct": 8,
+              "total": 8
+            },
+            "NO_EXISTENCE_CHANGE|AB|v1": {
+              "correct": 8,
+              "total": 8
+            },
+            "NO_EXISTENCE_CHANGE|BA|v0": {
+              "correct": 8,
+              "total": 8
+            },
+            "NO_EXISTENCE_CHANGE|BA|v1": {
+              "correct": 8,
+              "total": 8
+            },
+            "NO_EXISTENCE_CHANGE|BB|v0": {
+              "correct": 16,
+              "total": 16
+            },
+            "NO_EXISTENCE_CHANGE|BB|v1": {
+              "correct": 16,
+              "total": 16
+            }
+          },
+          "by_condition_version": {
+            "AA|v0": {
+              "correct": 16,
+              "total": 16
+            },
+            "AA|v1": {
+              "correct": 16,
+              "total": 16
+            },
+            "AB|v0": {
+              "correct": 16,
+              "total": 16
+            },
+            "AB|v1": {
+              "correct": 16,
+              "total": 16
+            },
+            "BA|v0": {
+              "correct": 16,
+              "total": 16
+            },
+            "BA|v1": {
+              "correct": 16,
+              "total": 16
+            },
+            "BB|v0": {
+              "correct": 16,
+              "total": 16
+            },
+            "BB|v1": {
+              "correct": 16,
+              "total": 16
+            }
+          },
+          "correct": 128,
+          "total": 128
+        },
+        "pass": true
+      },
+      "reads": [
+        "target_exist_first",
+        "target_exist_second"
+      ],
+      "rule": "direction(target_exist_first, target_exist_second)"
+    },
+    "SLOT_ID": {
+      "r0": {
+        "aa_bb_nochange": {
+          "failed_rows": [],
+          "pass": 64,
+          "per_version": {
+            "0": {
+              "pass": 32,
+              "total": 32
+            },
+            "1": {
+              "pass": 32,
+              "total": 32
+            }
+          },
+          "total": 64
+        },
+        "pass": true,
+        "relation": {
+          "failed_cells": [],
+          "pass": 16,
+          "per_version": {
+            "0": {
+              "pass": 8,
+              "total": 8
+            },
+            "1": {
+              "pass": 8,
+              "total": 8
+            }
+          },
+          "total": 16
+        }
+      },
+      "r0_pass_r1_fail": true,
+      "r1": {
+        "aa_bb_nochange": {
+          "failed_rows": [],
+          "pass": 64,
+          "per_version": {
+            "0": {
+              "pass": 32,
+              "total": 32
+            },
+            "1": {
+              "pass": 32,
+              "total": 32
+            }
+          },
+          "total": 64
+        },
+        "accounting": {
+          "correct": 80,
+          "illegal": 0,
+          "missing": 0,
+          "rows": 128,
+          "unknown": 0,
+          "wrong": 48,
+          "wrong_rows": [
+            "g00|AB|v0",
+            "g00|AB|v1",
+            "g00|BA|v0",
+            "g00|BA|v1",
+            "g01|AB|v0",
+            "g01|AB|v1",
+            "g01|BA|v0",
+            "g01|BA|v1",
+            "g02|AB|v0",
+            "g02|AB|v1",
+            "g02|BA|v0",
+            "g02|BA|v1",
+            "g03|AB|v0",
+            "g03|AB|v1",
+            "g03|BA|v0",
+            "g03|BA|v1",
+            "g04|AB|v1",
+            "g04|BA|v1",
+            "g05|AB|v1",
+            "g05|BA|v1",
+            "g06|AB|v1",
+            "g06|BA|v1",
+            "g07|AB|v1",
+            "g07|BA|v1",
+            "g08|AB|v0",
+            "g08|BA|v0",
+            "g09|AB|v0",
+            "g09|BA|v0",
+            "g10|AB|v0",
+            "g10|BA|v0",
+            "g11|AB|v0",
+            "g11|BA|v0",
+            "g12|AB|v0",
+            "g12|AB|v1",
+            "g12|BA|v0",
+            "g12|BA|v1",
+            "g13|AB|v0",
+            "g13|AB|v1",
+            "g13|BA|v0",
+            "g13|BA|v1",
+            "g14|AB|v0",
+            "g14|AB|v1",
+            "g14|BA|v0",
+            "g14|BA|v1",
+            "g15|AB|v0",
+            "g15|AB|v1",
+            "g15|BA|v0",
+            "g15|BA|v1"
+          ]
+        },
+        "components": {
+          "aa_bb_all": true,
+          "dir_change_rows_all_correct": false,
+          "dir_relation_all": true,
+          "inv_all_pairs": false,
+          "joint_all_correct": false,
+          "mft_all_correct": false,
+          "no_unknown_missing_illegal": true
+        },
+        "dir": {
+          "change_pairs_both_correct": 8,
+          "change_pairs_total": 16,
+          "change_rows_correct": 16,
+          "change_rows_total": 32,
+          "change_wrong_rows": [
+            "g04|AB|v1",
+            "g04|BA|v1",
+            "g05|AB|v1",
+            "g05|BA|v1",
+            "g06|AB|v1",
+            "g06|BA|v1",
+            "g07|AB|v1",
+            "g07|BA|v1",
+            "g08|AB|v0",
+            "g08|BA|v0",
+            "g09|AB|v0",
+            "g09|BA|v0",
+            "g10|AB|v0",
+            "g10|BA|v0",
+            "g11|AB|v0",
+            "g11|BA|v0"
+          ],
+          "relation": {
+            "failed_cells": [],
+            "pass": 16,
+            "per_version": {
+              "0": {
+                "pass": 8,
+                "total": 8
+              },
+              "1": {
+                "pass": 8,
+                "total": 8
+              }
+            },
+            "total": 16
+          }
+        },
+        "failed_components": [
+          "mft_all_correct",
+          "joint_all_correct",
+          "dir_change_rows_all_correct",
+          "inv_all_pairs"
+        ],
+        "inv": {
+          "failed_pairs": [
+            "g00|AB",
+            "g00|BA",
+            "g01|AB",
+            "g01|BA",
+            "g02|AB",
+            "g02|BA",
+            "g03|AB",
+            "g03|BA",
+            "g04|AB",
+            "g04|BA",
+            "g05|AB",
+            "g05|BA",
+            "g06|AB",
+            "g06|BA",
+            "g07|AB",
+            "g07|BA",
+            "g08|AB",
+            "g08|BA",
+            "g09|AB",
+            "g09|BA",
+            "g10|AB",
+            "g10|BA",
+            "g11|AB",
+            "g11|BA",
+            "g12|AB",
+            "g12|BA",
+            "g13|AB",
+            "g13|BA",
+            "g14|AB",
+            "g14|BA",
+            "g15|AB",
+            "g15|BA"
+          ],
+          "pass": 32,
+          "per_condition": {
+            "AA": {
+              "pass": 16,
+              "total": 16
+            },
+            "AB": {
+              "pass": 0,
+              "total": 16
+            },
+            "BA": {
+              "pass": 0,
+              "total": 16
+            },
+            "BB": {
+              "pass": 16,
+              "total": 16
+            }
+          },
+          "total": 64
+        },
+        "joint_ab_ba": {
+          "failed_pairs": [
+            "g00|AB+BA|v0",
+            "g00|AB+BA|v1",
+            "g01|AB+BA|v0",
+            "g01|AB+BA|v1",
+            "g02|AB+BA|v0",
+            "g02|AB+BA|v1",
+            "g03|AB+BA|v0",
+            "g03|AB+BA|v1",
+            "g04|AB+BA|v1",
+            "g05|AB+BA|v1",
+            "g06|AB+BA|v1",
+            "g07|AB+BA|v1",
+            "g08|AB+BA|v0",
+            "g09|AB+BA|v0",
+            "g10|AB+BA|v0",
+            "g11|AB+BA|v0",
+            "g12|AB+BA|v0",
+            "g12|AB+BA|v1",
+            "g13|AB+BA|v0",
+            "g13|AB+BA|v1",
+            "g14|AB+BA|v0",
+            "g14|AB+BA|v1",
+            "g15|AB+BA|v0",
+            "g15|AB+BA|v1"
+          ],
+          "pass": 8,
+          "per_version": {
+            "0": {
+              "pass": 4,
+              "total": 16
+            },
+            "1": {
+              "pass": 4,
+              "total": 16
+            }
+          },
+          "total": 32
+        },
+        "mft": {
+          "by_class_condition_version": {
+            "APPEAR|AB|v0": {
+              "correct": 4,
+              "total": 4
+            },
+            "APPEAR|AB|v1": {
+              "correct": 0,
+              "total": 4
+            },
+            "APPEAR|BA|v0": {
+              "correct": 0,
+              "total": 4
+            },
+            "APPEAR|BA|v1": {
+              "correct": 4,
+              "total": 4
+            },
+            "DISAPPEAR|AB|v0": {
+              "correct": 0,
+              "total": 4
+            },
+            "DISAPPEAR|AB|v1": {
+              "correct": 4,
+              "total": 4
+            },
+            "DISAPPEAR|BA|v0": {
+              "correct": 4,
+              "total": 4
+            },
+            "DISAPPEAR|BA|v1": {
+              "correct": 0,
+              "total": 4
+            },
+            "NO_EXISTENCE_CHANGE|AA|v0": {
+              "correct": 16,
+              "total": 16
+            },
+            "NO_EXISTENCE_CHANGE|AA|v1": {
+              "correct": 16,
+              "total": 16
+            },
+            "NO_EXISTENCE_CHANGE|AB|v0": {
+              "correct": 0,
+              "total": 8
+            },
+            "NO_EXISTENCE_CHANGE|AB|v1": {
+              "correct": 0,
+              "total": 8
+            },
+            "NO_EXISTENCE_CHANGE|BA|v0": {
+              "correct": 0,
+              "total": 8
+            },
+            "NO_EXISTENCE_CHANGE|BA|v1": {
+              "correct": 0,
+              "total": 8
+            },
+            "NO_EXISTENCE_CHANGE|BB|v0": {
+              "correct": 16,
+              "total": 16
+            },
+            "NO_EXISTENCE_CHANGE|BB|v1": {
+              "correct": 16,
+              "total": 16
+            }
+          },
+          "by_condition_version": {
+            "AA|v0": {
+              "correct": 16,
+              "total": 16
+            },
+            "AA|v1": {
+              "correct": 16,
+              "total": 16
+            },
+            "AB|v0": {
+              "correct": 4,
+              "total": 16
+            },
+            "AB|v1": {
+              "correct": 4,
+              "total": 16
+            },
+            "BA|v0": {
+              "correct": 4,
+              "total": 16
+            },
+            "BA|v1": {
+              "correct": 4,
+              "total": 16
+            },
+            "BB|v0": {
+              "correct": 16,
+              "total": 16
+            },
+            "BB|v1": {
+              "correct": 16,
+              "total": 16
+            }
+          },
+          "correct": 80,
+          "total": 128
+        },
+        "pass": false
+      },
+      "reads": [
+        "frame_id_first",
+        "frame_id_second",
+        "order_mark"
+      ],
+      "rule": "same frame_id -> NO_EXISTENCE_CHANGE; else ORIGINAL -> APPEAR, REVERSED -> DISAPPEAR"
+    }
+  },
+  "task_id": "RW-W2-CHECKLIST-MEASUREMENT-v1"
+}
