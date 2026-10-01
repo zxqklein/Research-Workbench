@@ -64,3 +64,10 @@ R0 在本域的盲区，逐条对应 R1 的捕获组件：
 ## 7. 成本实测（manifest.json）
 
 评分运行墙钟 0.0123 s、CPU 0.0123 s（≈3.4e-6 core-hours，上限 2 core-hours）；训练/GPU/模型/VLM/judge/API/付费/下载全部为 0；执行助手 token 不可观测，记 UNKNOWN。
+
+## 网页验收更正（2026-10-01）
+
+原 §4 对 summary.json 的引用有误：auxiliary.r1_misses 实际含五个被拒绝策略，不是空的漏检列表。源码在 not r1.pass 时追加该字段。依据各策略的全量输出与通过标记，R1 错误策略误放行集合确为零；其正确证据与字段解释见 [REVIEW_DATA.json](../../weeks/2026-10-07/REVIEW_DATA.json)，不能继续将原键解释为 false accepts。原机器输出不改写。
+
+另收窄解释：R1 的全量 MFT 要求已知真值下每行皆正确，所以本域零误放行是定义性质，不构成对真实模型判别力的统计支持。完整验收范围、资源口径与设计价值见 [第 2 周 REVIEW](../../weeks/2026-10-07/REVIEW.md)。
+

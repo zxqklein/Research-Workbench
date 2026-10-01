@@ -52,3 +52,10 @@ PREREG §2 注册 P1–P6。对账结果：P1、P2、P4、P5、P6 证实；**P3 
 
 - [`playbook/semantic-validity-of-controls.md`](../../playbook/semantic-validity-of-controls.md)（PB-003，候选；本次为其 §"使用记录 2026-10-01"）
 - [`external_methods/2026-09-30_checklist.md`](../../external_methods/2026-09-30_checklist.md)（CheckList MFT/INV/DIR 来源与适配边界）
+
+## 验收后修正（2026-10-01）
+
+主张 2 的证据栏中 auxiliary.r1_misses=[] 不符合原 JSON：该键实际列出五个被 R1 拒绝的非 ORACLE 策略。真正的错误策略误放行集合为空，依据独立核对的输出与 R1 通过标记；明确区分拒绝与误放行的字段见 [REVIEW_DATA.json](../../weeks/2026-10-07/REVIEW_DATA.json)。原代码和结果保持不变，主读数仍为 2/5。
+
+主张 2 的反驳条件也须收窄：若真值、映射与实现正确，全量 MFT 满分与存在错误方向输出不能同时成立。未来应检验这些前提和真实决策用途，而不是把本域零漏检当成真实策略空间的统计结果。主张 4 中互补读数的本地实例不规定所有真实任务都必须采用每一项或 100% 门槛。完整验收见 [第 2 周 REVIEW](../../weeks/2026-10-07/REVIEW.md)。
+

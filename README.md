@@ -64,3 +64,10 @@
 
 原设计已补齐：[docs/superpowers/specs/2026-09-30-research-workbench-design.md](docs/superpowers/specs/2026-09-30-research-workbench-design.md)。当前发布遗留项处置见 [docs/PUBLISHING.md](docs/PUBLISHING.md) 的收口记录；上游署名、来源与许可见 [docs/SOURCES_AND_LICENSES.md](docs/SOURCES_AND_LICENSES.md)。
 
+
+## 第 2 周验收状态（2026-10-01）
+
+[验收决定](weeks/2026-10-07/REVIEW.md)：执行接收、核心读数通过；[派生核对与字段解释](weeks/2026-10-07/REVIEW_DATA.json) 确认两个 R0 伪通过反例。原回传与案例中 r1_misses 的误引用及 RETURN 的相对链接以追加说明更正，原始代码与 results_v1 保留。
+
+第二周可以收口。产出为评分规范与逻辑反例，未形成新的真实遥感实验结论；经验条目保持候选，个人掌握保持未检验。第三周新样本、模型调用或采购不由本次验收自动启动。
+

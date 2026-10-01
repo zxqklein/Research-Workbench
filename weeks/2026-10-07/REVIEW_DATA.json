@@ -1,0 +1,106 @@
+{
+  "review_input_sha": "b26f30002943245cd1a938f76d6c200e7a491b97",
+  "method": "independent recount of original rows; no import of run.py or scorer; target direction = second existence minus first existence",
+  "counts": {
+    "groups": 16,
+    "input_rows": 128,
+    "strategies": 6,
+    "answers_checked": 768
+  },
+  "manifest_sha256_matches": 5,
+  "strategy_table": [
+    {
+      "strategy": "ORACLE",
+      "mft_correct": 128,
+      "mft_total": 128,
+      "relation_pass": 16,
+      "aa_bb_pass": 64,
+      "inv_pass": 64,
+      "joint_correct": 32,
+      "direction_rows_correct": 32,
+      "r0_pass": true,
+      "r1_pass": true
+    },
+    {
+      "strategy": "CONST_NULL",
+      "mft_correct": 96,
+      "mft_total": 128,
+      "relation_pass": 0,
+      "aa_bb_pass": 64,
+      "inv_pass": 64,
+      "joint_correct": 16,
+      "direction_rows_correct": 0,
+      "r0_pass": false,
+      "r1_pass": false
+    },
+    {
+      "strategy": "CONST_APPEAR",
+      "mft_correct": 16,
+      "mft_total": 128,
+      "relation_pass": 0,
+      "aa_bb_pass": 0,
+      "inv_pass": 64,
+      "joint_correct": 0,
+      "direction_rows_correct": 16,
+      "r0_pass": false,
+      "r1_pass": false
+    },
+    {
+      "strategy": "SLOT_ID",
+      "mft_correct": 80,
+      "mft_total": 128,
+      "relation_pass": 16,
+      "aa_bb_pass": 64,
+      "inv_pass": 32,
+      "joint_correct": 8,
+      "direction_rows_correct": 16,
+      "r0_pass": true,
+      "r1_pass": false
+    },
+    {
+      "strategy": "INVERT_TARGET",
+      "mft_correct": 96,
+      "mft_total": 128,
+      "relation_pass": 16,
+      "aa_bb_pass": 64,
+      "inv_pass": 64,
+      "joint_correct": 16,
+      "direction_rows_correct": 0,
+      "r0_pass": true,
+      "r1_pass": false
+    },
+    {
+      "strategy": "DISTRACTOR",
+      "mft_correct": 88,
+      "mft_total": 128,
+      "relation_pass": 8,
+      "aa_bb_pass": 64,
+      "inv_pass": 64,
+      "joint_correct": 12,
+      "direction_rows_correct": 8,
+      "r0_pass": false,
+      "r1_pass": false
+    }
+  ],
+  "r0_false_accepts": [
+    "SLOT_ID",
+    "INVERT_TARGET"
+  ],
+  "r1_false_accepts": [],
+  "r1_rejected_non_oracle_strategies": [
+    "CONST_NULL",
+    "CONST_APPEAR",
+    "SLOT_ID",
+    "INVERT_TARGET",
+    "DISTRACTOR"
+  ],
+  "original_auxiliary_r1_misses_contains": [
+    "CONST_NULL",
+    "CONST_APPEAR",
+    "SLOT_ID",
+    "INVERT_TARGET",
+    "DISTRACTOR"
+  ],
+  "original_field_interpretation": "rejected non-ORACLE strategies, not false accepts",
+  "scope": "finite-domain logical counterexamples and program verification only; not real-task performance or population estimates"
+}

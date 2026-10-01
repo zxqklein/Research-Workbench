@@ -31,3 +31,12 @@
 8. **下周候选、排序和推荐**：推荐——(1) **真实读数合同复用**：若 p2 侧当时有已授权的推理-only 任务，用 R1 型合同（逐条件正确目标＋提示不变性＋AA/BB 判空分列＋全量记账＋恒答基线）作为其评分合同的最低要求模板，先在极小样本上测"预期关系可核对"的通过率（PB-003 的第一次真实使用）；(2) 备选——把本周合同的弃答/UNKNOWN 路径在真实模型输出上做记账演练（无新训练）。两者均需回传后由用户/当周任务书裁决预算与样本，不自动搭车，不提前承诺"独立确认"。
 
 9. **未完成事项和具体原因**：无。判例题未作答属个人练习状态，不是实验未完成项。
+
+## 网页验收与更正入口（2026-10-01）
+
+本回传按 b26f30002943245cd1a938f76d6c200e7a491b97 验收：执行接收，2/5 主读数通过；原版字段解释与相对链接有更正，详见 [REVIEW.md](REVIEW.md) 与 [REVIEW_DATA.json](REVIEW_DATA.json)。
+
+- 原文引用的 r1_misses 并非空列表，实际是五个被拒绝策略；真正的 R1 错误策略误放行集合为空，派生字段已在 REVIEW_DATA 中分开提供。原始结果、代码与事前预测不改写。
+- 原文跨目录链接少一级父目录。正确入口：[合同](../../experiments/checklist_measurement_v1/contract.json)、[实现](../../experiments/checklist_measurement_v1/run.py)、[验证脚本](../../experiments/checklist_measurement_v1/verify_static.py)、[结果目录](../../experiments/checklist_measurement_v1/results_v1/)、[分析](../../experiments/checklist_measurement_v1/ANALYSIS.md)、[案例 004](../../cases/004-checklist-measurement/README.md)、[判例题](../../cases/004-checklist-measurement/quiz.md)、[答案卷](../../cases/004-checklist-measurement/quiz_answer_key.md)、[PB-003](../../playbook/semantic-validity-of-controls.md)。
+- 0.0123 s 是一次评分的 CPU 计时，不是全周累计耗时；真实遥感科研结论与个人掌握均没有因本次诊断升级。第二周收口，第三周新实验未由本次验收自动启动。
+
