@@ -1,0 +1,139 @@
+{
+  "task_id": "RW-W2-CHECKLIST-MEASUREMENT-v1",
+  "contract_version": "1.0.0",
+  "frozen_date": "2026-10-01",
+  "prereg": "weeks/2026-10-07/PREREG.md",
+  "plan": "weeks/2026-10-07/PLAN.md",
+  "repo_input_commit": "5a4a7dd06d37e129f7f866c485b487205090f89a",
+  "answer_classes": [
+    "APPEAR",
+    "DISAPPEAR",
+    "NO_EXISTENCE_CHANGE"
+  ],
+  "answer_semantics": {
+    "APPEAR": "实际先帧目标不存在、实际后帧存在",
+    "DISAPPEAR": "实际先帧目标存在、实际后帧不存在",
+    "NO_EXISTENCE_CHANGE": "目标存在性在两实际帧间不变；只指目标存在性，不代表场景无其他变化"
+  },
+  "direction_rule": {
+    "0->1": "APPEAR",
+    "1->0": "DISAPPEAR",
+    "0->0": "NO_EXISTENCE_CHANGE",
+    "1->1": "NO_EXISTENCE_CHANGE"
+  },
+  "enumeration": {
+    "group_count": 16,
+    "group_encoding": "g = 8*t_A + 4*t_B + 2*d_A + 1*d_B",
+    "states_domain": "t_A,t_B,d_A,d_B each in {0,1}",
+    "entities": {
+      "target": "t (identity fixed by generator, no scale ambiguity)",
+      "distractor": "d (identity fixed, distinct from t)"
+    },
+    "conditions": ["AB", "BA", "AA", "BB"],
+    "condition_frame_order": {
+      "AB": ["A", "B"],
+      "BA": ["B", "A"],
+      "AA": ["A", "A"],
+      "BB": ["B", "B"]
+    },
+    "backgrounds": {
+      "A": "bgA",
+      "B": "bgB"
+    },
+    "same_frame_note": "AA/BB copy the single frame field-by-field (identical input identity)",
+    "versions": [0, 1],
+    "order_marks": {
+      "0": { "AB": "ORIGINAL", "BA": "REVERSED", "AA": "ORIGINAL", "BB": "ORIGINAL" },
+      "1": { "AB": "REVERSED", "BA": "ORIGINAL", "AA": "REVERSED", "BB": "REVERSED" }
+    },
+    "order_mark_role": "task-irrelevant marker; the task is always answered by the actual input frame order",
+    "row_count": 128,
+    "row_key_format": "g<NN>|<CONDITION>|v<version>",
+    "change_groups": [4, 5, 6, 7, 8, 9, 10, 11],
+    "no_change_groups": [0, 1, 2, 3, 12, 13, 14, 15]
+  },
+  "truth_rule": {
+    "AB": "direction(t_A, t_B)",
+    "BA": "direction(t_B, t_A)",
+    "AA": "NO_EXISTENCE_CHANGE",
+    "BB": "NO_EXISTENCE_CHANGE",
+    "hand_written_table": "weeks/2026-10-07/PREREG.md section 4 (independent transcription; scorer truth must match it)"
+  },
+  "strategies": [
+    {
+      "id": "ORACLE",
+      "reads": ["target_exist_first", "target_exist_second"],
+      "rule": "direction(target_exist_first, target_exist_second)",
+      "role": "correct strategy in the synthetic domain; scoring cross-check, not a measured model"
+    },
+    {
+      "id": "CONST_NULL",
+      "reads": [],
+      "rule": "always NO_EXISTENCE_CHANGE",
+      "role": "constant empty-judgment baseline; change-sample denominator check"
+    },
+    {
+      "id": "CONST_APPEAR",
+      "reads": [],
+      "rule": "always APPEAR",
+      "role": "constant directional baseline; same-frame condition check"
+    },
+    {
+      "id": "SLOT_ID",
+      "reads": ["frame_id_first", "frame_id_second", "order_mark"],
+      "rule": "same frame_id -> NO_EXISTENCE_CHANGE; else ORIGINAL -> APPEAR, REVERSED -> DISAPPEAR",
+      "role": "can input identity + order mark fake-pass the relation threshold; must not read object states"
+    },
+    {
+      "id": "INVERT_TARGET",
+      "reads": ["target_exist_first", "target_exist_second"],
+      "rule": "direction(target_exist_first, target_exist_second) with APPEAR/DISAPPEAR swapped; NO_EXISTENCE_CHANGE kept",
+      "role": "both orders wrong together while preserving the swap relation"
+    },
+    {
+      "id": "DISTRACTOR",
+      "reads": ["distractor_exist_first", "distractor_exist_second"],
+      "rule": "direction(distractor_exist_first, distractor_exist_second)",
+      "role": "relation holds but bound to the wrong object"
+    }
+  ],
+  "field_permission_enforcement": {
+    "mechanism": "runner builds each strategy's view by filtering row fields through this contract's reads list; strategies receive only the filtered view",
+    "behavioral_checks": [
+      "SLOT_ID output constant across groups given (condition, version)",
+      "ORACLE and INVERT_TARGET output constant given (target_exist_first, target_exist_second)",
+      "DISTRACTOR output constant given (distractor_exist_first, distractor_exist_second)",
+      "CONST_NULL and CONST_APPEAR output constant everywhere"
+    ]
+  },
+  "contracts": {
+    "R0": {
+      "definition": "relation threshold: change-group order-swap relation + AA/BB empty judgment",
+      "change_relation_pairs": { "denominator": 16, "per_version": 8, "pass_condition": "AB and BA both directional (APPEAR/DISAPPEAR) and BA is the reverse of AB; UNKNOWN/missing/illegal/NO_EXISTENCE_CHANGE fail the cell" },
+      "aa_bb_nochange_rows": { "denominator": 64, "per_version": 32, "pass_condition": "answer == NO_EXISTENCE_CHANGE" },
+      "pass_rule": "all 16 relation cells AND all 64 AA/BB cells pass; denominators never shrunk by abstention or missing records"
+    },
+    "R1": {
+      "definition": "full contract: per-condition correct-target MFT + DIR + INV + AA/BB, full accounting",
+      "mft_rows": { "denominator": 128, "correct_condition": "answer == truth of that condition's own target", "decomposition": "true_class x condition x version (24 cells)" },
+      "joint_ab_ba_pairs": { "denominator": 32, "unit": "group x version", "pass_condition": "AB row correct AND BA row correct" },
+      "dir_relation_pairs": { "denominator": 16, "reported_separately_from": "answer correctness" },
+      "dir_change_rows": { "denominator": 32, "unit": "change group x condition(AB,BA) x version" },
+      "dir_change_pairs_both_correct": { "denominator": 16 },
+      "inv_pairs": { "denominator": 64, "unit": "group x condition", "pass_condition": "both versions valid answers AND equal; any UNKNOWN/missing/illegal on either side fails the pair and is accounted separately (non-answers never count as invariance)" },
+      "aa_bb_nochange_rows": { "denominator": 64 },
+      "accounting": { "rows": 128, "buckets": ["wrong", "unknown", "missing", "illegal"], "rule": "denominator fixed by enumeration; parse success never substitutes for task accuracy" },
+      "pass_rule": "mft 128/128 AND joint 32/32 AND dir relation 16/16 AND dir change rows 32/32 AND inv 64/64 AND aa_bb 64/64 AND unknown=missing=illegal=0"
+    }
+  },
+  "main_reading": {
+    "definition": "number of the 5 non-ORACLE strategies that pass R0 while failing R1",
+    "non_oracle_strategies": 5,
+    "note": "describes only the listed counterexample strategies; no incidence estimate for real models"
+  },
+  "reporting_discipline": {
+    "unit_of_aggregation": "16 controlled groups expanded to 128 controlled inputs; never '128 independent samples'",
+    "preserve": "failures and negative results kept verbatim; no row deletion, no denominator shrinking, no output edits to fit predictions",
+    "user_answers": "none available; personal mastery stays UNTESTED"
+  }
+}
